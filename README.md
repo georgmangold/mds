@@ -1,6 +1,9 @@
-# MinIO Design System
+# Modular Design System
 
-The MinIO Design System is a design specification for all UI elements used in MinIO products.
+Modular Design System or short `mds` is a Fork of MinIO Design System it´s a design specification for all UI elements used in MinIO® products.
+
+> [!NOTE]
+> MINIO is a registered trademark of the MinIO Corporation. Consequently, this project > is not affiliated with or endorsed by the MinIO Corporation.
 
 ## How to test
 
@@ -18,4 +21,4 @@ This process is required everytime a new component is created and ready to be di
 
 ## License
 
-MinIO Design System source is licensed under the GNU AGPLv3 license that can be found in the [LICENSE](https://github.com/minio/mds/blob/master/LICENSE) file.
+Modular Design System source is licensed under the GNU AGPLv3 license that can be found in the [LICENSE](LICENSE) file.

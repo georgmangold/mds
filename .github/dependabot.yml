@@ -14,5 +14,4 @@ updates:
       interval: "weekly"
     # Add reviewers
     reviewers:
-      - "dvaldivia"
-      - "bexsoft"
+      - "georgmangold"

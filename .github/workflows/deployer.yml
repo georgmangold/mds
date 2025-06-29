@@ -11,6 +11,7 @@ concurrency:
 
 jobs:
   build-and-release:
+    if: false
     name: "Build"
     runs-on: ${{ matrix.os }}
     strategy:
