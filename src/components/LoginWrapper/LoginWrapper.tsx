@@ -56,7 +56,7 @@ const CustomLogin = styled.div(({ theme }) => {
         left: 0,
       },
       "& .promoContainer": {
-        zIndex: 100,
+        zIndex: 5,
         width: "80%",
         maxWidth: "687px",
         position: "absolute",
@@ -91,6 +91,7 @@ const CustomLogin = styled.div(({ theme }) => {
       },
     },
     "& .formPanel": {
+      zIndex: 10,
       maxWidth: "520px",
       backgroundColor: get(theme, "login.formBG", "#fff"),
       [`@media (min-width: ${get(
