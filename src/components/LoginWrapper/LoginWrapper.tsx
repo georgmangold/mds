@@ -17,14 +17,12 @@
 import React, { FC, useEffect, useState } from "react";
 import get from "lodash/get";
 import styled from "styled-components";
-import { getGPUTier } from "detect-gpu";
 import ApplicationLogo from "../ApplicationLogo/ApplicationLogo";
 import Grid from "../Grid/Grid";
 import { LoginWrapperProps } from "./LoginWrapper.types";
 import { breakPoints } from "../../global/utils";
 
-const bgVideo = require("../assets/video/videoBG.mp4");
-const poster = require("../assets/background/loginAnimationPoster.png");
+const poster = require("../assets/background/background.jpg");
 
 const CustomLogin = styled.div(({ theme }) => {
   return {
@@ -34,7 +32,10 @@ const CustomLogin = styled.div(({ theme }) => {
     "& .decorationPanel": {
       position: "relative",
       backgroundColor: get(theme, "login.promoBG", "#000110"),
-      "& .videoContainer": {
+      background: `url(${poster}) no-repeat center center fixed`,
+      backgroundSize: "cover",
+      filter: get(theme, "login.bgFilter", "none"),
+      "& .backgroundContainer": {
         width: "100%",
         height: "auto",
         minHeight: 200,
@@ -42,28 +43,9 @@ const CustomLogin = styled.div(({ theme }) => {
         bottom: "0",
         right: 0,
         filter: get(theme, "login.bgFilter", "none"),
-        "&:before": {
-          position: "absolute",
+        "& .posterBG": {
           width: "100%",
-          height: 60,
-          display: "block",
-          content: "' '",
-          background:
-            "linear-gradient(to bottom, rgba(0,1,16,1) 0%,rgba(0,0,0,0.02) 100%)",
-          top: 0,
-        },
-        "&:after": {
-          position: "absolute",
-          width: 120,
           height: "100%",
-          display: "block",
-          content: "' '",
-          background:
-            "linear-gradient(to right, rgba(0,1,16,1) 0%,rgba(0,0,0,0.02) 100%)",
-          top: 0,
-        },
-        "& .videoBG": {
-          width: "100%",
         },
       },
       "& .bgExtend": {
@@ -168,20 +150,8 @@ const LoginWrapper: FC<LoginWrapperProps> = ({
   formFooter,
   promoInfo,
   promoHeader,
-  backgroundAnimation = true,
+  backgroundAnimation = false,
 }) => {
-  const [GPUAvailable, setGPUAvailable] = useState<boolean>(false);
-
-  useEffect(() => {
-    (async () => {
-      if (backgroundAnimation) {
-        const gpuTier = await getGPUTier();
-        setGPUAvailable(!!gpuTier.gpu && gpuTier.tier >= 2);
-      }
-      return;
-    })();
-  }, [backgroundAnimation]);
-
   return (
     <CustomLogin>
       <Grid container className={"mainContainer"} wrap={"nowrap"}>
@@ -198,22 +168,8 @@ const LoginWrapper: FC<LoginWrapperProps> = ({
               </Grid>
             </Grid>
           )}
-          <Grid item className={"videoContainer"}>
-            {GPUAvailable && backgroundAnimation ? (
-              <video
-                autoPlay
-                playsInline
-                muted
-                loop
-                disablePictureInPicture
-                poster={poster}
-                className={"videoBG"}
-              >
-                <source src={bgVideo} type={"video/mp4"} />
-              </video>
-            ) : (
-              <img src={poster} className={"videoBG"} />
-            )}
+          <Grid item className={"backgroundContainer"}>
+            <img className={"posterBG"} />
           </Grid>
         </Grid>
         <Grid item xs={12} className={"formPanel"}>

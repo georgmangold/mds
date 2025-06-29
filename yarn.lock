@@ -5218,15 +5218,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detect-gpu@npm:^5.0.70":
-  version: 5.0.70
-  resolution: "detect-gpu@npm:5.0.70"
-  dependencies:
-    webgl-constants: "npm:^1.1.1"
-  checksum: 10c0/5a2053d4779edb3490821599b316b5362c8b55c30b82806c64bcfd21f40c67e2debfd677937899080aea2b27765471552bafeeae9c9f1cf63bdd07461a7e2163
-  languageName: node
-  linkType: hard
-
 "detect-newline@npm:^3.0.0":
   version: 3.1.0
   resolution: "detect-newline@npm:3.1.0"
@@ -5684,13 +5675,6 @@ __metadata:
   version: 5.3.0
   resolution: "estraverse@npm:5.3.0"
   checksum: 10c0/1ff9447b96263dec95d6d67431c5e0771eb9776427421260a3e2f0fdd5d6bd4f8e37a7338f5ad2880c9f143450c9b1e4fc2069060724570a49cf9cf0312bd107
-  languageName: node
-  linkType: hard
-
-"estree-walker@npm:^0.6.1":
-  version: 0.6.1
-  resolution: "estree-walker@npm:0.6.1"
-  checksum: 10c0/6dabc855faa04a1ffb17b6a9121b6008ba75ab5a163ad9dc3d7fca05cfda374c5f5e91418d783496620ca75e99a73c40874d8b75f23b4117508cc8bde78e7b41
   languageName: node
   linkType: hard
 
@@ -7982,7 +7966,6 @@ __metadata:
     "@types/styled-components": "npm:^5.1.34"
     "@uiw/react-textarea-code-editor": "npm:^3.1.1"
     babel-loader: "npm:^10.0.0"
-    detect-gpu: "npm:^5.0.70"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     lodash: "npm:^4.17.21"
@@ -7997,7 +7980,6 @@ __metadata:
     rollup-plugin-copy: "npm:^3.5.0"
     rollup-plugin-dts: "npm:^6.2.1"
     rollup-plugin-import-css: "npm:^3.5.8"
-    rollup-plugin-import-file: "npm:^1.0.1"
     rollup-plugin-peer-deps-external: "npm:^2.2.4"
     rollup-plugin-terser: "npm:^7.0.2"
     storybook: "npm:8.6.14"
@@ -8535,17 +8517,6 @@ __metadata:
     minipass: "npm:^7.0.4"
     rimraf: "npm:^5.0.5"
   checksum: 10c0/82f8bf70da8af656909a8ee299d7ed3b3372636749d29e105f97f20e88971be31f5ed7642f2e898f00283b68b701cc01307401cdc209b0efc5dd3818220e5093
-  languageName: node
-  linkType: hard
-
-"mkdirp@npm:^0.5.1":
-  version: 0.5.6
-  resolution: "mkdirp@npm:0.5.6"
-  dependencies:
-    minimist: "npm:^1.2.6"
-  bin:
-    mkdirp: bin/cmd.js
-  checksum: 10c0/e2e2be789218807b58abced04e7b49851d9e46e88a2f9539242cc8a92c9b5c3a0b9bab360bd3014e02a140fc4fbc58e31176c408b493f8a2a6f4986bd7527b01
   languageName: node
   linkType: hard
 
@@ -9793,16 +9764,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-import-file@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "rollup-plugin-import-file@npm:1.0.1"
-  dependencies:
-    mkdirp: "npm:^0.5.1"
-    rollup-pluginutils: "npm:^2.0.1"
-  checksum: 10c0/778975aa4ea5efc077f9b02eaa3d3f5469a2168245a4715c784102d7a43c869c0a65f6af7ccb918442235443cdb8280fc9684be32a92f841d3c38a6460ea1413
-  languageName: node
-  linkType: hard
-
 "rollup-plugin-peer-deps-external@npm:^2.2.4":
   version: 2.2.4
   resolution: "rollup-plugin-peer-deps-external@npm:2.2.4"
@@ -9823,15 +9784,6 @@ __metadata:
   peerDependencies:
     rollup: ^2.0.0
   checksum: 10c0/f79b851c6f7b06555d3a8ce7a4e32abd2b7cb8318e89fb8db73e662fa6e3af1a59920e881d111efc65a7437fd9582b61b1f4859b6fd839ba948616829d92432d
-  languageName: node
-  linkType: hard
-
-"rollup-pluginutils@npm:^2.0.1":
-  version: 2.8.2
-  resolution: "rollup-pluginutils@npm:2.8.2"
-  dependencies:
-    estree-walker: "npm:^0.6.1"
-  checksum: 10c0/20947bec5a5dd68b5c5c8423911e6e7c0ad834c451f1a929b1f4e2bc08836ad3f1a722ef2bfcbeca921870a0a283f13f064a317dc7a6768496e98c9a641ba290
   languageName: node
   linkType: hard
 
@@ -11052,13 +11004,6 @@ __metadata:
   version: 2.0.1
   resolution: "web-namespaces@npm:2.0.1"
   checksum: 10c0/df245f466ad83bd5cd80bfffc1674c7f64b7b84d1de0e4d2c0934fb0782e0a599164e7197a4bce310ee3342fd61817b8047ff04f076a1ce12dd470584142a4bd
-  languageName: node
-  linkType: hard
-
-"webgl-constants@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "webgl-constants@npm:1.1.1"
-  checksum: 10c0/525a9838b0cbcbab902d1bc5457882424a9c146f851042c901ae457123193f5c5e47846b47c1c999e4f3abc24322cac494cea0cc52fec28bd8eb3a05cd79d573
   languageName: node
   linkType: hard
 
