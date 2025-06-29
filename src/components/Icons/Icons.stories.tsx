@@ -14,6 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import React from "react";
 import { Fragment, ReactNode, useState } from "react";
 import { Meta, Story } from "@storybook/react";
 
@@ -378,6 +379,12 @@ const Template: Story = (args) => {
               <cicons.ConsoleIcon />
               <br />
               ConsoleIcon
+            </div>
+
+            <div className="story-icon">
+              <cicons.ConsoleCIcon />
+              <br />
+              ConsoleCIcon
             </div>
 
             <div className="story-icon">
@@ -1606,11 +1613,6 @@ const Template: Story = (args) => {
               <ficons.FolderBrowserIcon />
               <br />
               FolderBrowserIcon
-            </div>
-            <div className="story-icon">
-              <ficons.TrashOffIcon />
-              <br />
-              TrashOffIcon
             </div>
           </IconDisplay>
         </Grid>

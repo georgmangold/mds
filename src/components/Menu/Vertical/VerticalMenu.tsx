@@ -26,8 +26,8 @@ import MenuItem from "./MenuItem";
 import MenuSectionHeader from "./MenuSectionHeader";
 import LogoutIcon from "../../Icons/LogoutIcon";
 import Tooltip from "../../Tooltip/Tooltip";
-import MinIOTierIconXs from "../../Icons/MinIOTierIconXs";
 import MenuDivider from "../Common/MenuDivider";
+import { ConsoleCIcon } from "../../Icons";
 
 const VerticalMenuDrawer = styled.div<MenuConstructProps>(({ theme, sx }) => {
   return {
@@ -231,7 +231,7 @@ const VerticalMenu: FC<MenuProps> = ({
           <Box className={"collapsedMenuHeader"}>
             <Tooltip tooltip={"Expand Menu"} placement={"right"}>
               <span className={"collapsedIcon"}>
-                <MinIOTierIconXs />
+                <ConsoleCIcon />
               </span>
             </Tooltip>
           </Box>

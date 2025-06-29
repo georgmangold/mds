@@ -22,11 +22,11 @@ import { lightColors } from "../../../global/themes";
 import Box from "../../Box/Box";
 import ApplicationLogo from "../../ApplicationLogo/ApplicationLogo";
 import Tooltip from "../../Tooltip/Tooltip";
-import MinIOTierIconXs from "../../Icons/MinIOTierIconXs";
 import MenuSectionHeader from "../Vertical/MenuSectionHeader";
 import MenuItem from "../Vertical/MenuItem";
 import LogoutIcon from "../../Icons/LogoutIcon";
 import AlertCloseIcon from "../../Icons/AlertCloseIcon";
+import { ConsoleCIcon } from "../../Icons";
 
 const MobileMenuContainer = styled.div<MenuConstructProps>(({ theme, sx }) => {
   return {
@@ -112,7 +112,7 @@ const MobileMenuList: FC<MenuProps> = ({
           <Box className={"collapsedMenuHeader"}>
             <Tooltip tooltip={"Expand Menu"}>
               <span className={"collapsedIcon"}>
-                <MinIOTierIconXs />
+                <ConsoleCIcon />
               </span>
             </Tooltip>
           </Box>
