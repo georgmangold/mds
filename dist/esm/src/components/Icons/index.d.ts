@@ -19,6 +19,7 @@ export { default as ChangeAccessPolicyIcon } from "./ChangeAccessPolicyIcon";
 export { default as ServersIcon } from "./ServersIcon";
 export { default as ClosePanelIcon } from "./ClosePanelIcon";
 export { default as MinIOTierIconXs } from "./MinIOTierIconXs";
+export { default as ConsoleCIcon } from "./ConsoleCIcon";
 export { default as DashboardIcon } from "./DashboardIcon";
 export { default as ClustersIcon } from "./ClustersIcon";
 export { default as MirroringIcon } from "./MirroringIcon";
