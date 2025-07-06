@@ -1,4 +1,4 @@
-import { terser } from "rollup-plugin-terser";
+import terser from "@rollup/plugin-terser";
 import dts from "rollup-plugin-dts";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
@@ -21,9 +21,9 @@ export default [
     makeAbsoluteExternalsRelative: true,
     plugins: [
       peerDepsExternal(),
-      resolve({
+      resolve({ 
         browser: true,
-      }),
+       }),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       terser(),
