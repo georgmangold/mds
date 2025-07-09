@@ -242,6 +242,8 @@ const CodeMirrorWrapper: FC<CodeEditorProps> = ({
   className,
   helpTip,
   helpTipPlacement,
+  readOnly=false,
+  disabled=false,
 }) => {
   return (
     <CodeEditorBase
@@ -273,6 +275,8 @@ const CodeMirrorWrapper: FC<CodeEditorProps> = ({
           id={"code_wrapper"}
           padding={15}
           className={"mds-editor"}
+          readOnly={readOnly}
+          disabled={disabled}
         />
       </Box>
       {helpTools && <Box className={"actionsContainer"}>{helpTools}</Box>}

@@ -30,6 +30,8 @@ export interface CodeEditorProps {
   sx?: CSSObject;
   helpTip?: React.ReactNode;
   helpTipPlacement?: CommonHelpTipPlacement;
+  readOnly?: boolean;
+  disabled?: boolean;
 }
 
 export interface CodeEditorBaseProps {

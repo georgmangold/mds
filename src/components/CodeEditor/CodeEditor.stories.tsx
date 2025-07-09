@@ -91,3 +91,21 @@ WithCustomStyles.args = {
     },
   },
 };
+
+export const ReadOnly = Template.bind({});
+ReadOnly.args = {
+  label: "Some Code Read Only",
+  helpTools: (
+    <Fragment>
+      <Button
+        id={"copy-demo"}
+        onClick={() => alert("CLICKED!")}
+        icon={<CopyIcon />}
+      />
+    </Fragment>
+  ),
+  tooltip: "This is a code editor",
+  readOnly: true,
+  value: '{"name":"John", "age":30, "car":null}',
+  disabled: false,
+};
