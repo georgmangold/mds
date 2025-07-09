@@ -242,8 +242,8 @@ const CodeMirrorWrapper: FC<CodeEditorProps> = ({
   className,
   helpTip,
   helpTipPlacement,
-  readOnly=false,
-  disabled=false,
+  readOnly = false,
+  disabled = false,
 }) => {
   return (
     <CodeEditorBase

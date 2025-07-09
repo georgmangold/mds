@@ -17,3 +17,8 @@ test-pretty:
 
 storybook:
 	@(STORYBOOK_DISABLE_TELEMETRY=1 yarn storybook --disable-telemetry)
+
+prettify:
+	yarn prettier --write ./src --log-level warn
+
+pretty: prettify
