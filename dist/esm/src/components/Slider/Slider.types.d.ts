@@ -1,23 +1,21 @@
 import React from "react";
 import { CSSObject } from "styled-components";
 import { CommonHelpTipPlacement } from "../HelpTip/HelpTip.types";
-export interface CodeEditorProps {
-    value: string;
+export interface SliderProps {
+    id: string;
     label?: string;
-    mode?: string;
+    noLabelMinWidth?: boolean;
+    error?: string;
     tooltip?: string;
-    editorHeight?: string | number;
-    onChange: (value: string) => any;
-    className?: string;
-    helpTools?: React.ReactNode;
     sx?: CSSObject;
     helpTip?: React.ReactNode;
     helpTipPlacement?: CommonHelpTipPlacement;
-    readOnly?: boolean;
-    disabled?: boolean;
+    displayValue?: boolean;
+    displayValueFunction?: (value: any) => React.ReactNode;
 }
-export interface CodeEditorBaseProps {
-    editorHeight: string | number;
+export interface SliderContainerProps {
+    children?: React.ReactNode;
     sx?: CSSObject;
+    error?: boolean;
     className?: string;
 }
