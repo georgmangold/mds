@@ -1,3 +1,2 @@
-import React from "react";
-declare const GlobalStyles: React.NamedExoticComponent<import("styled-components").ExecutionProps & object>;
+declare const GlobalStyles: import("styled-components").GlobalStyleComponent<{}, import("styled-components").DefaultTheme>;
 export default GlobalStyles;
