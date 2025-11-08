@@ -231,7 +231,9 @@ const GenericWizard = ({
           {wizardSteps.map((step, index) => {
             return (
               <button
-                key={"wizard-step-" + step.label.toLowerCase().replace(" ", "-")}
+                key={
+                  "wizard-step-" + step.label.toLowerCase().replace(" ", "-")
+                }
                 id={"wizard-step-" + step.label.toLowerCase().replace(" ", "-")}
                 onClick={() => pageChange(index)}
                 disabled={linearMode ? index > currentStep : false}

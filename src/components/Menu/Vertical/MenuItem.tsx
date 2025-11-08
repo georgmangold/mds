@@ -229,7 +229,9 @@ const MenuItem: FC<MenuItemProps> = ({
               <Tooltip
                 tooltip={visibleTooltip ? child.name : ""}
                 placement={"right"}
-                key={"submenuitem-" + child.name.toLowerCase().replace(" ", "-")}
+                key={
+                  "submenuitem-" + child.name.toLowerCase().replace(" ", "-")
+                }
               >
                 <MenuItem
                   onClick={onClick}

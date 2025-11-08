@@ -19,8 +19,8 @@ import { ThemeHandlerProps } from "./ThemeHandler.types";
 import { darkTheme, lightTheme } from "../../global/themes";
 import { ThemeProvider } from "styled-components";
 import { ThemeDefinitionProps } from "../../global/global.types";
-import isPropValid from '@emotion/is-prop-valid';
-import { StyleSheetManager } from 'styled-components';
+import isPropValid from "@emotion/is-prop-valid";
+import { StyleSheetManager } from "styled-components";
 
 const ThemeHandler: FC<ThemeHandlerProps> = ({
   darkMode = false,
@@ -37,7 +37,7 @@ const ThemeHandler: FC<ThemeHandlerProps> = ({
     <StyleSheetManager shouldForwardProp={shouldForwardProp}>
       <ThemeProvider theme={selectedTheme}>{children}</ThemeProvider>;
     </StyleSheetManager>
-  )
+  );
 };
 
 // This implements the default behavior from styled-components v5
