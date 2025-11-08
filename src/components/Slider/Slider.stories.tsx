@@ -14,6 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import React, { useState } from "react";
 import { Meta, Story } from "@storybook/react-webpack5";
 
 import Slider from "./Slider";
@@ -26,7 +27,6 @@ import TestIcon from "../../utils/TestIcon";
 import Box from "../Box/Box";
 import UsersIcon from "../Icons/UsersIcon";
 import PasswordKeyIcon from "../Icons/PasswordKeyIcon";
-import { useState } from "react";
 
 export default {
   title: "MDS/Forms/Slider",

@@ -213,9 +213,7 @@ const GenericWizard = ({
                 id={"wizard-step-" + step.label.toLowerCase().replace(" ", "-")}
                 onClick={() => pageChange(index)}
                 key={`wizard-${index.toString()}`}
-                className={`stepItem ${
-                  currentStep === index ? "selected" : ""
-                }`}
+                className={`stepItem ${currentStep === index ? "selected" : ""}`}
                 disabled={linearMode ? index > currentStep : false}
               >
                 {step.label}
@@ -233,12 +231,11 @@ const GenericWizard = ({
           {wizardSteps.map((step, index) => {
             return (
               <button
+                key={"wizard-step-" + step.label.toLowerCase().replace(" ", "-")}
                 id={"wizard-step-" + step.label.toLowerCase().replace(" ", "-")}
                 onClick={() => pageChange(index)}
                 disabled={linearMode ? index > currentStep : false}
-                className={`buttonList ${
-                  currentStep === index ? "selected" : ""
-                }`}
+                className={`buttonList ${currentStep === index ? "selected" : ""}`}
               >
                 {index + 1}. {step.label}
               </button>

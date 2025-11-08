@@ -117,7 +117,7 @@ const options = [
     icon: <TestIcon />,
     name: "Test 5",
     group: "Group 2",
-    id: "test5",
+    id: "tes5",
     children: [
       {
         icon: <TestIcon />,
@@ -153,7 +153,7 @@ const options = [
     icon: <TestIcon />,
     name: "Hidden",
     group: "Group 2",
-    id: "test5",
+    id: "testl2",
     children: [],
   },
 ];
@@ -187,7 +187,7 @@ Horizontal.args = {
       icon: <LambdaNotificationsIcon />,
       name: "Test 5",
       group: "Group 2",
-      id: "test5",
+      id: "test2",
       children: [
         {
           icon: <TestIcon />,
