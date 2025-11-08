@@ -35,7 +35,7 @@ const ThemeHandler: FC<ThemeHandlerProps> = ({
 
   return (
     <StyleSheetManager shouldForwardProp={shouldForwardProp}>
-      <ThemeProvider theme={selectedTheme}>{children}</ThemeProvider>;
+      <ThemeProvider theme={selectedTheme}>{children}</ThemeProvider>
     </StyleSheetManager>
   );
 };
