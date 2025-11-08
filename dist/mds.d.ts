@@ -363,7 +363,7 @@ interface ThemeHandlerProps {
 
 declare const ThemeHandler: FC<ThemeHandlerProps>;
 
-declare const GlobalStyles: styled_components.GlobalStyleComponent<{}, styled_components.DefaultTheme>;
+declare const GlobalStyles: React$1.NamedExoticComponent<styled_components.ExecutionProps & object>;
 
 interface ButtonProps {
     id: string;
