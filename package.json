@@ -14,11 +14,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.35",
     "@uiw/react-textarea-code-editor": "^3.1.1",
     "luxon": "^3.7.1",
     "react-calendar": "^6.0.0",
     "react-virtualized": "^9.22.6",
-    "styled-components": "^6.1.19"
+    "styled-components": "5.3.11"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",

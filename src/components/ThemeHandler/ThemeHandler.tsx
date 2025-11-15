@@ -19,8 +19,6 @@ import { ThemeHandlerProps } from "./ThemeHandler.types";
 import { darkTheme, lightTheme } from "../../global/themes";
 import { ThemeProvider } from "styled-components";
 import { ThemeDefinitionProps } from "../../global/global.types";
-import isPropValid from "@emotion/is-prop-valid";
-import { StyleSheetManager } from "styled-components";
 
 const ThemeHandler: FC<ThemeHandlerProps> = ({
   darkMode = false,
@@ -33,22 +31,7 @@ const ThemeHandler: FC<ThemeHandlerProps> = ({
     selectedTheme = customTheme;
   }
 
-  return (
-    <StyleSheetManager shouldForwardProp={shouldForwardProp}>
-      <ThemeProvider theme={selectedTheme}>{children}</ThemeProvider>
-    </StyleSheetManager>
-  );
+  return <ThemeProvider theme={selectedTheme}>{children}</ThemeProvider>;
 };
-
-// This implements the default behavior from styled-components v5
-// https://styled-components.com/docs/faqs#shouldforwardprop-is-no-longer-provided-by-default
-function shouldForwardProp(propName: string, target: any) {
-  if (typeof target === "string") {
-    // For HTML elements, forward the prop if it is a valid HTML attribute
-    return isPropValid(propName);
-  }
-  // For other elements, forward all props
-  return true;
-}
 
 export default ThemeHandler;
