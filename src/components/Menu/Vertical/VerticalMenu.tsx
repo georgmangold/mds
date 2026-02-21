@@ -277,6 +277,7 @@ const VerticalMenu: FC<MenuProps> = ({
                     badge={option.badge}
                     children={option.children}
                     visibleTooltip={!isOpen}
+                    selected={option.selected}
                   />
                 </Fragment>
               );

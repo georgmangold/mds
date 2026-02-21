@@ -146,6 +146,7 @@ const HorizontalMenu: FC<MenuProps> = ({
                 currentPath={currentPath}
                 badge={option.badge}
                 children={option.children}
+                selected={option.selected}
               />
             );
           })}

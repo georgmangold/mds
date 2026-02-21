@@ -168,7 +168,48 @@ export const SubpathSelected = {
   render: Template,
 
   args: {
-    options,
+    options: [
+      {
+        icon: <TestIcon />,
+        path: "/testPath1",
+        name: "Test 1",
+        group: "Group 1",
+        id: "SubpathSelected1",
+        selected: true,
+      },
+      {
+        icon: <TestIcon />,
+        path: "/testPath2",
+        name: "Test 2",
+        group: "Group 2",
+        id: "SubpathSelected2",
+        selected: false,
+      },
+      {
+        icon: <TestIcon />,
+        path: "/testPath3",
+        name: "Test 3",
+        group: "Group 3",
+        id: "SubpathSelected3",
+        selected: true,
+      },
+      {
+        icon: <TestIcon />,
+        path: "/testPath4",
+        name: "Test 4",
+        group: "Group 4",
+        id: "SubpathSelected4",
+        selected: false,
+      },
+      {
+        icon: <TestIcon />,
+        path: "/testPath5",
+        name: "Test 5",
+        group: "Group 5",
+        id: "SubpathSelected5",
+        selected: true,
+      },
+    ],
   },
 };
 
