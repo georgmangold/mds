@@ -2237,7 +2237,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/pluginutils@npm:^5.0.1, @rollup/pluginutils@npm:^5.1.0, @rollup/pluginutils@npm:^5.2.0":
+"@rollup/pluginutils@npm:^5.0.1, @rollup/pluginutils@npm:^5.1.0, @rollup/pluginutils@npm:^5.3.0":
   version: 5.3.0
   resolution: "@rollup/pluginutils@npm:5.3.0"
   dependencies:
@@ -6912,7 +6912,7 @@ __metadata:
     rollup: "npm:^4.52.4"
     rollup-plugin-copy: "npm:^3.5.0"
     rollup-plugin-dts: "npm:^6.3.0"
-    rollup-plugin-import-css: "npm:^4.0.2"
+    rollup-plugin-import-css: "npm:^4.2.0"
     rollup-plugin-peer-deps-external: "npm:^2.2.4"
     storybook: "npm:10.2.10"
     styled-components: "npm:5.3.11"
@@ -8485,14 +8485,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-import-css@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "rollup-plugin-import-css@npm:4.0.2"
+"rollup-plugin-import-css@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "rollup-plugin-import-css@npm:4.2.0"
   dependencies:
-    "@rollup/pluginutils": "npm:^5.2.0"
+    "@rollup/pluginutils": "npm:^5.3.0"
   peerDependencies:
     rollup: ^2.x.x || ^3.x.x || ^4.x.x
-  checksum: 10c0/b2c86d75ebfee160987b5079c8955607764adebb7178b6dd1cb12873d3aa859c36a600042288446e7a6145b6d8c2c83d0d1f96d35d337844067661c73ae03a62
+  checksum: 10c0/1429e2e86ba498e32ba5c362e9b2cdb5fda86cd16d37771a4e516851da08b9ede564b0199d3b816fa8453a181b0c6b44e886703854c8f0f16a6961485fd118e9
   languageName: node
   linkType: hard
 
