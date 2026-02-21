@@ -28,6 +28,7 @@ export interface MenuItemProps {
     currentPath?: string;
     visibleTooltip?: boolean;
     isVisible?: boolean;
+    selected?: boolean;
 }
 export interface SectionHeaderProps extends HTMLAttributes<HTMLDivElement> {
     label: string;

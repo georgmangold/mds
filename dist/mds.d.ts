@@ -957,6 +957,7 @@ interface MenuItemProps {
     currentPath?: string;
     visibleTooltip?: boolean;
     isVisible?: boolean;
+    selected?: boolean;
 }
 interface SectionHeaderProps extends HTMLAttributes<HTMLDivElement> {
     label: string;
