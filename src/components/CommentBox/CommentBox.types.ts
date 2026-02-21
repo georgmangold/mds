@@ -18,8 +18,7 @@ import React from "react";
 import { CSSObject } from "styled-components";
 import { CommonHelpTipPlacement } from "../HelpTip/HelpTip.types";
 
-export interface CommentBoxProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface CommentBoxProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   id: string;
   fullWidth?: boolean;
   label?: string;

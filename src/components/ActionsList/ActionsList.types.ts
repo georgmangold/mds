@@ -35,8 +35,7 @@ export interface ActionsListPanelProps {
   sx?: CSSObject;
 }
 
-export interface ActionButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ActionButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   icon: React.ReactNode;
 }
