@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import Button from "./Button";
 import { ButtonProps } from "./Button.types";
@@ -30,7 +30,7 @@ export default {
   argTypes: {},
 } as Meta<typeof Button>;
 
-const Template: Story<ButtonProps> = (args) => (
+const Template: StoryFn<ButtonProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <Button {...args} onClick={() => alert("You clicked me!")} />
@@ -39,77 +39,107 @@ const Template: Story<ButtonProps> = (args) => (
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  disabled: false,
-  label: "Test Button",
-  variant: "regular",
+export const Default = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    label: "Test Button",
+    variant: "regular",
+  },
 };
 
-export const CallToAction = Template.bind({});
-CallToAction.args = {
-  disabled: false,
-  label: "Call to Action",
-  variant: "callAction",
+export const CallToAction = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    label: "Call to Action",
+    variant: "callAction",
+  },
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  disabled: false,
-  label: "Secondary",
-  variant: "secondary",
+export const Secondary = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    label: "Secondary",
+    variant: "secondary",
+  },
 };
 
-export const Text = Template.bind({});
-Text.args = {
-  disabled: false,
-  label: "Text Button",
-  variant: "text",
+export const Text = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    label: "Text Button",
+    variant: "text",
+  },
 };
 
-export const SubAction = Template.bind({});
-SubAction.args = {
-  disabled: false,
-  label: "Text Button",
-  variant: "subAction",
+export const SubAction = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    label: "Text Button",
+    variant: "subAction",
+  },
 };
 
-export const DefaultIcon = Template.bind({});
-DefaultIcon.args = {
-  disabled: false,
-  label: "Test Button",
-  variant: "regular",
-  icon: <TestIcon />,
+export const DefaultIcon = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    label: "Test Button",
+    variant: "regular",
+    icon: <TestIcon />,
+  },
 };
 
-export const CallToActionIcon = Template.bind({});
-CallToActionIcon.args = {
-  disabled: false,
-  label: "Call to Action",
-  variant: "callAction",
-  icon: <TestIcon />,
+export const CallToActionIcon = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    label: "Call to Action",
+    variant: "callAction",
+    icon: <TestIcon />,
+  },
 };
 
-export const SecondaryIcon = Template.bind({});
-SecondaryIcon.args = {
-  disabled: false,
-  label: "Secondary",
-  variant: "secondary",
-  icon: <TestIcon />,
+export const SecondaryIcon = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    label: "Secondary",
+    variant: "secondary",
+    icon: <TestIcon />,
+  },
 };
 
-export const FullWidth = Template.bind({});
-FullWidth.args = {
-  disabled: false,
-  label: "Test Button",
-  variant: "regular",
-  fullWidth: true,
-  icon: <TestIcon />,
+export const FullWidth = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    label: "Test Button",
+    variant: "regular",
+    fullWidth: true,
+    icon: <TestIcon />,
+  },
 };
 
-export const IconOnly = Template.bind({});
-IconOnly.args = {
-  disabled: false,
-  variant: "regular",
-  icon: <TestIcon />,
+export const IconOnly = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    variant: "regular",
+    icon: <TestIcon />,
+  },
 };

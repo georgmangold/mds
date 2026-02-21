@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import Box from "./Box";
 import { BoxProps } from "./Box.types";
@@ -29,39 +29,53 @@ export default {
   argTypes: {},
 } as Meta<typeof Box>;
 
-const Template: Story<BoxProps> = (args) => (
+const Template: StoryFn<BoxProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <Box {...args}>Box Content</Box>
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const WithBorder = Template.bind({});
-WithBorder.args = {
-  withBorders: true,
+export const Default = {
+  render: Template,
+  args: {},
 };
 
-export const WithBackgroundColor = Template.bind({});
-WithBackgroundColor.args = {
-  withBorders: true,
-  useBackground: true,
+export const WithBorder = {
+  render: Template,
+
+  args: {
+    withBorders: true,
+  },
 };
 
-export const WithCustomBorderPadding = Template.bind({});
-WithCustomBorderPadding.args = {
-  withBorders: true,
-  customBorderPadding: "5px 100px",
+export const WithBackgroundColor = {
+  render: Template,
+
+  args: {
+    withBorders: true,
+    useBackground: true,
+  },
 };
 
-export const BoxWithCustomStyles = Template.bind({});
-BoxWithCustomStyles.args = {
-  withBorders: true,
-  sx: {
-    color: "#fff",
-    backgroundColor: "#460",
-    borderColor: "#f9a",
+export const WithCustomBorderPadding = {
+  render: Template,
+
+  args: {
+    withBorders: true,
+    customBorderPadding: "5px 100px",
+  },
+};
+
+export const BoxWithCustomStyles = {
+  render: Template,
+
+  args: {
+    withBorders: true,
+    sx: {
+      color: "#fff",
+      backgroundColor: "#460",
+      borderColor: "#f9a",
+    },
   },
 };

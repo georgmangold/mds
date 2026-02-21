@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import Checkbox from "./Checkbox";
 import StoryThemeProvider from "../../utils/StoryThemeProvider";
@@ -28,31 +28,37 @@ export default {
   argTypes: {},
 } as Meta<typeof Checkbox>;
 
-const Template: Story<CheckboxProps> = (args) => (
+const Template: StoryFn<CheckboxProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <Checkbox {...args} />
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "Click to confirm",
-  id: "checkbox",
-  onClick: () => {
-    console.log("click");
+export const Default = {
+  render: Template,
+
+  args: {
+    label: "Click to confirm",
+    id: "checkbox",
+    onClick: () => {
+      console.log("click");
+    },
+    tooltip: "test",
   },
-  tooltip: "test",
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  label: "Click to confirm",
-  id: "checkbox",
-  onClick: () => {
-    console.log("click");
+export const Disabled = {
+  render: Template,
+
+  args: {
+    label: "Click to confirm",
+    id: "checkbox",
+    onClick: () => {
+      console.log("click");
+    },
+    tooltip: "test",
+    checked: true,
+    disabled: true,
   },
-  tooltip: "test",
-  checked: true,
-  disabled: true,
 };

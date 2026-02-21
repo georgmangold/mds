@@ -16,7 +16,7 @@
 
 import React from "react";
 import { Fragment, ReactNode, useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import * as cicons from "./";
 import * as micons from "./SidebarMenus";
@@ -66,7 +66,7 @@ const IconDisplay = ({
   );
 };
 
-const Template: Story = (args) => {
+const Template: StoryFn = (args) => {
   const [color, setColor] = useState<boolean>(false);
 
   return (
@@ -1621,5 +1621,7 @@ const Template: Story = (args) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  render: Template,
+  args: {},
+};

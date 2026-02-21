@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment, useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import DateTimeInput from "./DateTimeInput";
 import { DateTimeInputProps } from "./DateTimeInput.types";
@@ -35,7 +35,7 @@ export default {
   argTypes: {},
 } as Meta<typeof DateTimeInput>;
 
-const Template: Story<DateTimeInputProps> = ({
+const Template: StoryFn<DateTimeInputProps> = ({
   mode,
   usePortal,
   maxDate,
@@ -80,92 +80,119 @@ const Template: Story<DateTimeInputProps> = ({
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  id: "DateTimeInput",
-  usePortal: false,
-  timeFormat: "12h",
+export const Default = {
+  render: Template,
+
+  args: {
+    id: "DateTimeInput",
+    usePortal: false,
+    timeFormat: "12h",
+  },
 };
 
-export const Format24H = Template.bind({});
-Format24H.args = {
-  id: "DateTimeInput",
-  usePortal: false,
-  timeFormat: "24h",
+export const Format24H = {
+  render: Template,
+
+  args: {
+    id: "DateTimeInput",
+    usePortal: false,
+    timeFormat: "24h",
+  },
 };
 
-export const WithSecondsSelector = Template.bind({});
-WithSecondsSelector.args = {
-  id: "DateTimeInput",
-  usePortal: false,
-  timeFormat: "12h",
-  secondsSelector: true,
+export const WithSecondsSelector = {
+  render: Template,
+
+  args: {
+    id: "DateTimeInput",
+    usePortal: false,
+    timeFormat: "12h",
+    secondsSelector: true,
+  },
 };
 
-export const WithLabel = Template.bind({});
-WithLabel.args = {
-  id: "DateTimeInput",
-  usePortal: false,
-  timeFormat: "12h",
-  secondsSelector: true,
-  label: "Select a Date",
+export const WithLabel = {
+  render: Template,
+
+  args: {
+    id: "DateTimeInput",
+    usePortal: false,
+    timeFormat: "12h",
+    secondsSelector: true,
+    label: "Select a Date",
+  },
 };
 
-export const WithTooltip = Template.bind({});
-WithTooltip.args = {
-  id: "DateTimeInput",
-  usePortal: false,
-  timeFormat: "12h",
-  secondsSelector: true,
-  label: "Select a Date",
-  tooltip: "Please select a date to complete",
+export const WithTooltip = {
+  render: Template,
+
+  args: {
+    id: "DateTimeInput",
+    usePortal: false,
+    timeFormat: "12h",
+    secondsSelector: true,
+    label: "Select a Date",
+    tooltip: "Please select a date to complete",
+  },
 };
 
-export const CustomPickerIcon = Template.bind({});
-CustomPickerIcon.args = {
-  id: "DateTimeInput",
-  usePortal: false,
-  timeFormat: "12h",
-  secondsSelector: true,
-  label: "Select a Date",
-  tooltip: "Please select a date to complete",
-  openPickerIcon: <CalendarIcon />,
+export const CustomPickerIcon = {
+  render: Template,
+
+  args: {
+    id: "DateTimeInput",
+    usePortal: false,
+    timeFormat: "12h",
+    secondsSelector: true,
+    label: "Select a Date",
+    tooltip: "Please select a date to complete",
+    openPickerIcon: <CalendarIcon />,
+  },
 };
 
-export const CustomDateDisplayFormat = Template.bind({});
-CustomDateDisplayFormat.args = {
-  id: "DateTimeInput",
-  usePortal: false,
-  timeFormat: "12h",
-  secondsSelector: true,
-  label: "Select a Date",
-  tooltip: "Please select a date to complete",
-  openPickerIcon: <CalendarIcon />,
-  displayFormat: "DDDD",
+export const CustomDateDisplayFormat = {
+  render: Template,
+
+  args: {
+    id: "DateTimeInput",
+    usePortal: false,
+    timeFormat: "12h",
+    secondsSelector: true,
+    label: "Select a Date",
+    tooltip: "Please select a date to complete",
+    openPickerIcon: <CalendarIcon />,
+    displayFormat: "DDDD",
+  },
 };
 
-export const PickerStartComponent = Template.bind({});
-PickerStartComponent.args = {
-  id: "DateTimeInput",
-  usePortal: false,
-  timeFormat: "12h",
-  secondsSelector: true,
-  label: "Select a Date",
-  tooltip: "Please select a date to complete",
-  pickerStartComponent: (
-    <Fragment>
-      <TimeIcon /> Start Date
-    </Fragment>
-  ),
+export const PickerStartComponent = {
+  render: Template,
+
+  args: {
+    id: "DateTimeInput",
+    usePortal: false,
+    timeFormat: "12h",
+    secondsSelector: true,
+    label: "Select a Date",
+    tooltip: "Please select a date to complete",
+    pickerStartComponent: (
+      <Fragment>
+        <TimeIcon /> Start Date
+      </Fragment>
+    ),
+  },
 };
 
-export const DateOnly = Template.bind({});
-DateOnly.args = {
-  id: "DateTimeInput",
-  usePortal: false,
-  timeFormat: "12h",
-  secondsSelector: true,
-  label: "Select a Date",
-  tooltip: "Please select a date to complete",
-  mode: "date",
+export const DateOnly = {
+  render: Template,
+
+  args: {
+    id: "DateTimeInput",
+    usePortal: false,
+    timeFormat: "12h",
+    secondsSelector: true,
+    label: "Select a Date",
+    tooltip: "Please select a date to complete",
+    mode: "date",
+  },
 };

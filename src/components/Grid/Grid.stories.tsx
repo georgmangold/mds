@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import Grid from "./Grid";
 import { GridProps } from "./Grid.types";
@@ -29,7 +29,7 @@ export default {
   argTypes: {},
 } as Meta<typeof Grid>;
 
-const Template: Story<GridProps> = (args) => (
+const Template: StoryFn<GridProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <Grid
@@ -200,5 +200,7 @@ const Template: Story<GridProps> = (args) => (
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  render: Template,
+  args: {},
+};

@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import ProgressBar from "./ProgressBar";
 import { ProgressBarProps } from "./ProgressBar.types";
@@ -29,49 +29,67 @@ export default {
   argTypes: {},
 } as Meta<typeof ProgressBar>;
 
-const Template: Story<ProgressBarProps> = (args) => (
+const Template: StoryFn<ProgressBarProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <ProgressBar {...args} />
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  value: 30,
-  variant: "determinate",
+export const Default = {
+  render: Template,
+
+  args: {
+    value: 30,
+    variant: "determinate",
+  },
 };
 
-export const WithProgressLabel = Template.bind({});
-WithProgressLabel.args = {
-  value: 30,
-  variant: "determinate",
-  progressLabel: true,
+export const WithProgressLabel = {
+  render: Template,
+
+  args: {
+    value: 30,
+    variant: "determinate",
+    progressLabel: true,
+  },
 };
 
-export const NotificationLabel = Template.bind({});
-NotificationLabel.args = {
-  value: 30,
-  variant: "determinate",
-  progressLabel: true,
-  notificationLabel:
-    "This notification label will change it's color depending on the color state",
+export const NotificationLabel = {
+  render: Template,
+
+  args: {
+    value: 30,
+    variant: "determinate",
+    progressLabel: true,
+    notificationLabel:
+      "This notification label will change it's color depending on the color state",
+  },
 };
 
-export const Indeterminate = Template.bind({});
-Indeterminate.args = {
-  variant: "indeterminate",
+export const Indeterminate = {
+  render: Template,
+
+  args: {
+    variant: "indeterminate",
+  },
 };
 
-export const CustomHeight = Template.bind({});
-CustomHeight.args = {
-  variant: "indeterminate",
-  barHeight: 3,
+export const CustomHeight = {
+  render: Template,
+
+  args: {
+    variant: "indeterminate",
+    barHeight: 3,
+  },
 };
 
-export const TransparentBackground = Template.bind({});
-TransparentBackground.args = {
-  variant: "indeterminate",
-  barHeight: 5,
-  transparentBG: true,
+export const TransparentBackground = {
+  render: Template,
+
+  args: {
+    variant: "indeterminate",
+    barHeight: 5,
+    transparentBG: true,
+  },
 };

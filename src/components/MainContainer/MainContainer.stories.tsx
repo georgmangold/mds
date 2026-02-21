@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import MainContainer from "./MainContainer";
 import { MainContainerProps } from "./MainContainer.types";
@@ -31,7 +31,7 @@ export default {
   argTypes: {},
 } as Meta<typeof MainContainer>;
 
-const Template: Story<MainContainerProps> = (args) => {
+const Template: StoryFn<MainContainerProps> = (args) => {
   return (
     <StoryThemeProvider>
       <GlobalStyles />
@@ -40,60 +40,68 @@ const Template: Story<MainContainerProps> = (args) => {
   );
 };
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
 
-Default.args = {
-  children: <Box>This is a Block simulating the content box</Box>,
-  menu: <div>This is where menu goes</div>,
+  args: {
+    children: <Box>This is a Block simulating the content box</Box>,
+    menu: <div>This is where menu goes</div>,
+  },
 };
 
-export const NoMenu = Template.bind({});
+export const NoMenu = {
+  render: Template,
 
-NoMenu.args = {
-  children: <Box>This is a Block simulating the content box</Box>,
+  args: {
+    children: <Box>This is a Block simulating the content box</Box>,
+  },
 };
 
-export const HorizontalMenu = Template.bind({});
+export const HorizontalMenu = {
+  render: Template,
 
-HorizontalMenu.args = {
-  children: <Box>This is a Block simulating the content box</Box>,
-  menu: <div>This is where menu goes</div>,
-  horizontal: true,
+  args: {
+    children: <Box>This is a Block simulating the content box</Box>,
+    menu: <div>This is where menu goes</div>,
+    horizontal: true,
+  },
 };
 
-export const DisableMobileMode = Template.bind({});
+export const DisableMobileMode = {
+  render: Template,
 
-DisableMobileMode.args = {
-  children: <Box>This is a Block simulating the content box</Box>,
-  menu: (
-    <Menu
-      isOpen={true}
-      displayGroupTitles
-      options={[
-        {
-          icon: <TestIcon />,
-          path: "/testPath1",
-          name: "Test 1",
-          group: "Group 1",
-          id: "test1",
-          onClick: (path) => {
-            console.log("Custom Click Action", path);
+  args: {
+    children: <Box>This is a Block simulating the content box</Box>,
+    menu: (
+      <Menu
+        isOpen={true}
+        displayGroupTitles
+        options={[
+          {
+            icon: <TestIcon />,
+            path: "/testPath1",
+            name: "Test 1",
+            group: "Group 1",
+            id: "test1",
+            onClick: (path) => {
+              console.log("Custom Click Action", path);
+            },
           },
-        },
-      ]}
-      applicationLogo={{ applicationName: "console", subVariant: "AGPL" }}
-      callPathAction={(path) => {
-        alert(`Called Path "${path}"`);
-      }}
-      signOutAction={() => {
-        alert("Sign Out!");
-      }}
-      collapseAction={() => {
-        console.log("COLLAPSE!");
-      }}
-      horizontal={false}
-      currentPath={"/testPath1"}
-    />
-  ),
-  mobileModeAuto: false,
+        ]}
+        applicationLogo={{ applicationName: "console", subVariant: "AGPL" }}
+        callPathAction={(path) => {
+          alert(`Called Path "${path}"`);
+        }}
+        signOutAction={() => {
+          alert("Sign Out!");
+        }}
+        collapseAction={() => {
+          console.log("COLLAPSE!");
+        }}
+        horizontal={false}
+        currentPath={"/testPath1"}
+      />
+    ),
+    mobileModeAuto: false,
+  },
 };

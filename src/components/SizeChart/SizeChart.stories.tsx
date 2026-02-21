@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import SizeChart from "./SizeChart";
 import { SizeChartProps } from "./SizeChart.types";
@@ -30,51 +30,69 @@ export default {
   argTypes: {},
 } as Meta<typeof SizeChart>;
 
-const Template: Story<SizeChartProps> = (args) => (
+const Template: StoryFn<SizeChartProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <SizeChart {...args} />
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  usedBytes: 45000,
-  totalBytes: 100000,
+export const Default = {
+  render: Template,
+
+  args: {
+    usedBytes: 45000,
+    totalBytes: 100000,
+  },
 };
 
-export const WarningSpace = Template.bind({});
-WarningSpace.args = {
-  usedBytes: 85000,
-  totalBytes: 100000,
+export const WarningSpace = {
+  render: Template,
+
+  args: {
+    usedBytes: 85000,
+    totalBytes: 100000,
+  },
 };
 
-export const DangerSpace = Template.bind({});
-DangerSpace.args = {
-  usedBytes: 95000,
-  totalBytes: 100000,
+export const DangerSpace = {
+  render: Template,
+
+  args: {
+    usedBytes: 95000,
+    totalBytes: 100000,
+  },
 };
 
-export const WithLabel = Template.bind({});
-WithLabel.args = {
-  usedBytes: 95000,
-  totalBytes: 100000,
-  label: true,
+export const WithLabel = {
+  render: Template,
+
+  args: {
+    usedBytes: 95000,
+    totalBytes: 100000,
+    label: true,
+  },
 };
 
-export const WithChartLabel = Template.bind({});
-WithChartLabel.args = {
-  usedBytes: 9504400,
-  totalBytes: 103840000,
-  label: true,
-  chartLabel: "Reported Usage",
+export const WithChartLabel = {
+  render: Template,
+
+  args: {
+    usedBytes: 9504400,
+    totalBytes: 103840000,
+    label: true,
+    chartLabel: "Reported Usage",
+  },
 };
 
-export const CustomSize = Template.bind({});
-CustomSize.args = {
-  usedBytes: 95000,
-  totalBytes: 100000,
-  label: true,
-  width: 50,
-  height: 50,
+export const CustomSize = {
+  render: Template,
+
+  args: {
+    usedBytes: 95000,
+    totalBytes: 100000,
+    label: true,
+    width: 50,
+    height: 50,
+  },
 };

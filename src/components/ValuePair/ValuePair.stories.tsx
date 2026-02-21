@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import ValuePair from "./ValuePair";
 import StoryThemeProvider from "../../utils/StoryThemeProvider";
@@ -28,7 +28,7 @@ export default {
   argTypes: {},
 } as Meta<typeof ValuePair>;
 
-const Template: Story<ValuePairProps> = ({ sx, direction }) => (
+const Template: StoryFn<ValuePairProps> = ({ sx, direction }) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <ValuePair
@@ -44,18 +44,26 @@ const Template: Story<ValuePairProps> = ({ sx, direction }) => (
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Horizontal = Template.bind({});
-Horizontal.args = {
-  direction: "row",
+export const Default = {
+  render: Template,
+  args: {},
 };
 
-export const CustomStyles = Template.bind({});
-CustomStyles.args = {
-  sx: {
-    backgroundColor: "#080",
-    color: "#fff",
+export const Horizontal = {
+  render: Template,
+
+  args: {
+    direction: "row",
+  },
+};
+
+export const CustomStyles = {
+  render: Template,
+
+  args: {
+    sx: {
+      backgroundColor: "#080",
+      color: "#fff",
+    },
   },
 };

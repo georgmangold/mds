@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import ActionLink from "./ActionLink";
 import { ActionLinkProps } from "./ActionLink.types";
@@ -29,7 +29,7 @@ export default {
   argTypes: {},
 } as Meta<typeof ActionLink>;
 
-const Template: Story<ActionLinkProps> = (args) => (
+const Template: StoryFn<ActionLinkProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <span style={{ fontSize: 16 }}>
@@ -44,18 +44,26 @@ const Template: Story<ActionLinkProps> = (args) => (
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const LoadingLink = Template.bind({});
-LoadingLink.args = {
-  isLoading: true,
+export const Default = {
+  render: Template,
+  args: {},
 };
 
-export const CustomStyles = Template.bind({});
-CustomStyles.args = {
-  sx: {
-    backgroundColor: "#f87",
-    color: "#fff",
+export const LoadingLink = {
+  render: Template,
+
+  args: {
+    isLoading: true,
+  },
+};
+
+export const CustomStyles = {
+  render: Template,
+
+  args: {
+    sx: {
+      backgroundColor: "#f87",
+      color: "#fff",
+    },
   },
 };

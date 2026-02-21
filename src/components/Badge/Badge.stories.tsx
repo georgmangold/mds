@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import Badge from "./Badge";
 import { BadgeProps } from "./Badge.types";
@@ -30,7 +30,7 @@ export default {
   argTypes: {},
 } as Meta<typeof Badge>;
 
-const Template: Story<BadgeProps> = (args) => (
+const Template: StoryFn<BadgeProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <Badge {...args} onClick={() => alert("You clicked me!")}>
@@ -39,40 +39,60 @@ const Template: Story<BadgeProps> = (args) => (
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  badgeContent: 5,
+export const Default = {
+  render: Template,
+
+  args: {
+    badgeContent: 5,
+  },
 };
 
-export const DotOnly = Template.bind({});
-DotOnly.args = {
-  badgeContent: 5,
-  dotOnly: true,
+export const DotOnly = {
+  render: Template,
+
+  args: {
+    badgeContent: 5,
+    dotOnly: true,
+  },
 };
 
-export const Warn = Template.bind({});
-Warn.args = { badgeContent: 5, color: "warn" };
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  badgeContent: 5,
-  color: "secondary",
+export const Warn = {
+  render: Template,
+  args: { badgeContent: 5, color: "warn" },
 };
 
-export const Alert = Template.bind({});
-Alert.args = {
-  badgeContent: 5,
-  color: "alert",
+export const Secondary = {
+  render: Template,
+
+  args: {
+    badgeContent: 5,
+    color: "secondary",
+  },
 };
 
-export const Ok = Template.bind({});
-Ok.args = {
-  badgeContent: 5,
-  color: "ok",
+export const Alert = {
+  render: Template,
+
+  args: {
+    badgeContent: 5,
+    color: "alert",
+  },
 };
 
-export const Grey = Template.bind({});
-Grey.args = {
-  badgeContent: 5,
-  color: "grey",
+export const Ok = {
+  render: Template,
+
+  args: {
+    badgeContent: 5,
+    color: "ok",
+  },
+};
+
+export const Grey = {
+  render: Template,
+
+  args: {
+    badgeContent: 5,
+    color: "grey",
+  },
 };

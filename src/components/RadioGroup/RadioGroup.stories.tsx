@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import RadioGroup from "./RadioGroup";
 import StoryThemeProvider from "../../utils/StoryThemeProvider";
@@ -28,7 +28,7 @@ export default {
   argTypes: {},
 } as Meta<typeof RadioGroup>;
 
-const Template: Story<RadioGroupProps> = ({
+const Template: StoryFn<RadioGroupProps> = ({
   label,
   id,
   tooltip,
@@ -73,26 +73,35 @@ const Template: Story<RadioGroupProps> = ({
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "Select an Option",
-  id: "RadioGroup",
-  tooltip: "test",
+export const Default = {
+  render: Template,
+
+  args: {
+    label: "Select an Option",
+    id: "RadioGroup",
+    tooltip: "test",
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  label: "Select an Option",
-  id: "RadioGroup",
-  tooltip: "test",
-  disableOptions: true,
+export const Disabled = {
+  render: Template,
+
+  args: {
+    label: "Select an Option",
+    id: "RadioGroup",
+    tooltip: "test",
+    disableOptions: true,
+  },
 };
 
-export const DisplayInColumn = Template.bind({});
-DisplayInColumn.args = {
-  label: "Select an Option",
-  id: "RadioGroup",
-  tooltip: "test",
-  disableOptions: false,
-  displayInColumn: true,
+export const DisplayInColumn = {
+  render: Template,
+
+  args: {
+    label: "Select an Option",
+    id: "RadioGroup",
+    tooltip: "test",
+    disableOptions: false,
+    displayInColumn: true,
+  },
 };

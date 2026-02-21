@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import DateTimeSelector from "./DateTimeSelector";
 import { DateTimeSelectorProps } from "./DateTimeInput.types";
@@ -31,7 +31,7 @@ export default {
   argTypes: {},
 } as Meta<typeof DateTimeSelector>;
 
-const Template: Story<DateTimeSelectorProps> = ({
+const Template: StoryFn<DateTimeSelectorProps> = ({
   mode,
   id,
   usePortal,
@@ -67,32 +67,44 @@ const Template: Story<DateTimeSelectorProps> = ({
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  id: "DateTimeSelector",
-  usePortal: false,
-  timeFormat: "12h",
-  secondsSelector: true,
+export const Default = {
+  render: Template,
+
+  args: {
+    id: "DateTimeSelector",
+    usePortal: false,
+    timeFormat: "12h",
+    secondsSelector: true,
+  },
 };
 
-export const Format24H = Template.bind({});
-Format24H.args = {
-  id: "DateTimeInput",
-  usePortal: false,
-  timeFormat: "24h",
+export const Format24H = {
+  render: Template,
+
+  args: {
+    id: "DateTimeInput",
+    usePortal: false,
+    timeFormat: "24h",
+  },
 };
 
-export const WithSecondsSelector = Template.bind({});
-WithSecondsSelector.args = {
-  id: "DateTimeInput",
-  usePortal: false,
-  timeFormat: "12h",
-  secondsSelector: true,
+export const WithSecondsSelector = {
+  render: Template,
+
+  args: {
+    id: "DateTimeInput",
+    usePortal: false,
+    timeFormat: "12h",
+    secondsSelector: true,
+  },
 };
 
-export const CalendarOnly = Template.bind({});
-CalendarOnly.args = {
-  id: "DateTimeInput",
-  usePortal: false,
-  mode: "date",
+export const CalendarOnly = {
+  render: Template,
+
+  args: {
+    id: "DateTimeInput",
+    usePortal: false,
+    mode: "date",
+  },
 };

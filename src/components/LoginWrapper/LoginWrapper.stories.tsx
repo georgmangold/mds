@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import LoginWrapper from "./LoginWrapper";
 import { LoginWrapperProps } from "./LoginWrapper.types";
@@ -28,14 +28,59 @@ export default {
   argTypes: {},
 } as Meta<typeof LoginWrapper>;
 
-const Template: Story<LoginWrapperProps> = (args) => (
+const Template: StoryFn<LoginWrapperProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <LoginWrapper {...args} />
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
+
+  args: {
+    promoHeader: <Fragment>Multi-Cloud Object&nbsp;Store</Fragment>,
+    promoInfo: (
+      <Fragment>
+        MinIO offers high-performance, S3 compatible object storage. <br />
+        Native to Kubernetes, MinIO is the only object storage suite available
+        on every public cloud, every Kubernetes distribution, the private cloud
+        and the edge. MinIO is software-defined and is 100% open source under
+        GNU AGPL v3. <a href={"#"}>link</a>
+      </Fragment>
+    ),
+    logoProps: {
+      applicationName: "console",
+      subVariant: "AGPL",
+    },
+    form: (
+      <Fragment>
+        DEMO FORM
+        <input name={"testInput"} style={demoInputStyles} placeholder="User" />
+        <br />
+        <input
+          name={"testInput"}
+          type={"password"}
+          style={demoInputStyles}
+          placeholder="Password"
+        />
+        <br />
+        <Button
+          id={"submit"}
+          type={"button"}
+          label={"Login"}
+          variant={"callAction"}
+          fullWidth
+        />
+      </Fragment>
+    ),
+    formFooter: (
+      <Fragment>
+        Documentation│<a href={"#"}>GitHub</a>│Support│Download
+      </Fragment>
+    ),
+  },
+};
 
 const demoInputStyles = {
   width: "100%",
@@ -45,47 +90,4 @@ const demoInputStyles = {
   height: "30px",
   marginBottom: "20px",
   padding: "5px",
-};
-
-Default.args = {
-  promoHeader: <Fragment>Multi-Cloud Object&nbsp;Store</Fragment>,
-  promoInfo: (
-    <Fragment>
-      MinIO offers high-performance, S3 compatible object storage. <br />
-      Native to Kubernetes, MinIO is the only object storage suite available on
-      every public cloud, every Kubernetes distribution, the private cloud and
-      the edge. MinIO is software-defined and is 100% open source under GNU AGPL
-      v3. <a href={"#"}>link</a>
-    </Fragment>
-  ),
-  logoProps: {
-    applicationName: "console",
-    subVariant: "AGPL",
-  },
-  form: (
-    <Fragment>
-      DEMO FORM
-      <input name={"testInput"} style={demoInputStyles} placeholder="User" />
-      <br />
-      <input
-        name={"testInput"}
-        type={"password"}
-        style={demoInputStyles}
-        placeholder="Password"
-      />
-      <br />
-      <Button
-        id={"submit"}
-        type={"button"}
-        label={"Login"}
-        variant={"callAction"}
-        fullWidth
-      />
-    </Fragment>
-  ),
-  formFooter: (
-    <Fragment>
-      Documentation│<a href={"#"}>GitHub</a>│Support│Download
-    </Fragment>
-  ),
 };

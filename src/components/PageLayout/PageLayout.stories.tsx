@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import PageLayout from "./PageLayout";
 import { PageLayoutProps } from "./PageLayout.types";
@@ -30,7 +30,7 @@ export default {
   argTypes: {},
 } as Meta<typeof PageLayout>;
 
-const Template: Story<PageLayoutProps> = (args) => (
+const Template: StoryFn<PageLayoutProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <PageLayout {...args}>
@@ -67,19 +67,27 @@ const Template: Story<PageLayoutProps> = (args) => (
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const ConstrainedContainer = Template.bind({});
-ConstrainedContainer.args = {
-  variant: "constrained",
+export const Default = {
+  render: Template,
+  args: {},
 };
 
-export const CustomStylesContainer = Template.bind({});
-CustomStylesContainer.args = {
-  variant: "constrained",
-  sx: {
-    backgroundColor: "#090",
-    color: "#fff",
+export const ConstrainedContainer = {
+  render: Template,
+
+  args: {
+    variant: "constrained",
+  },
+};
+
+export const CustomStylesContainer = {
+  render: Template,
+
+  args: {
+    variant: "constrained",
+    sx: {
+      backgroundColor: "#090",
+      color: "#fff",
+    },
   },
 };

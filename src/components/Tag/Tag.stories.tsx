@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import Tag from "./Tag";
 import StoryThemeProvider from "../../utils/StoryThemeProvider";
@@ -29,7 +29,7 @@ export default {
   argTypes: {},
 } as Meta<typeof Tag>;
 
-const Template: Story<TagProps> = ({
+const Template: StoryFn<TagProps> = ({
   label,
   id,
   onDelete,
@@ -96,85 +96,109 @@ const Template: Story<TagProps> = ({
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "A Tag",
-  id: "tag-test",
-  onDelete: () => {
-    alert("Clicked Delete Button!");
+export const Default = {
+  render: Template,
+
+  args: {
+    label: "A Tag",
+    id: "tag-test",
+    onDelete: () => {
+      alert("Clicked Delete Button!");
+    },
   },
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: "A Tag",
-  id: "tag-test",
-  color: "secondary",
-  onDelete: () => {
-    alert("Clicked Delete Button!");
+export const Secondary = {
+  render: Template,
+
+  args: {
+    label: "A Tag",
+    id: "tag-test",
+    color: "secondary",
+    onDelete: () => {
+      alert("Clicked Delete Button!");
+    },
   },
 };
 
-export const Alert = Template.bind({});
-Alert.args = {
-  label: "A Tag",
-  id: "tag-test",
-  color: "alert",
-  onDelete: () => {
-    alert("Clicked Delete Button!");
+export const Alert = {
+  render: Template,
+
+  args: {
+    label: "A Tag",
+    id: "tag-test",
+    color: "alert",
+    onDelete: () => {
+      alert("Clicked Delete Button!");
+    },
   },
 };
 
-export const Warn = Template.bind({});
-Warn.args = {
-  label: "A Tag",
-  id: "tag-test",
-  color: "warn",
-  onDelete: () => {
-    alert("Clicked Delete Button!");
+export const Warn = {
+  render: Template,
+
+  args: {
+    label: "A Tag",
+    id: "tag-test",
+    color: "warn",
+    onDelete: () => {
+      alert("Clicked Delete Button!");
+    },
   },
 };
 
-export const Grey = Template.bind({});
-Grey.args = {
-  label: "A Tag",
-  id: "tag-test",
-  color: "grey",
-  onDelete: () => {
-    alert("Clicked Delete Button!");
+export const Grey = {
+  render: Template,
+
+  args: {
+    label: "A Tag",
+    id: "tag-test",
+    color: "grey",
+    onDelete: () => {
+      alert("Clicked Delete Button!");
+    },
   },
 };
 
-export const Ok = Template.bind({});
-Ok.args = {
-  label: "A Tag",
-  id: "tag-test",
-  color: "ok",
-  onDelete: () => {
-    alert("Clicked Delete Button!");
+export const Ok = {
+  render: Template,
+
+  args: {
+    label: "A Tag",
+    id: "tag-test",
+    color: "ok",
+    onDelete: () => {
+      alert("Clicked Delete Button!");
+    },
   },
 };
 
-export const Square = Template.bind({});
-Square.args = {
-  label: "A Tag",
-  id: "tag-test",
-  color: "default",
-  onDelete: () => {
-    alert("Clicked Delete Button!");
+export const Square = {
+  render: Template,
+
+  args: {
+    label: "A Tag",
+    id: "tag-test",
+    color: "default",
+    onDelete: () => {
+      alert("Clicked Delete Button!");
+    },
+    square: true,
   },
-  square: true,
 };
 
-export const CustomStyles = Template.bind({});
-CustomStyles.args = {
-  label: "A Tag",
-  id: "tag-test",
-  onDelete: () => {
-    alert("Clicked Delete Button!");
-  },
-  sx: {
-    backgroundColor: "#080",
-    color: "#ff0",
+export const CustomStyles = {
+  render: Template,
+
+  args: {
+    label: "A Tag",
+    id: "tag-test",
+    onDelete: () => {
+      alert("Clicked Delete Button!");
+    },
+    sx: {
+      backgroundColor: "#080",
+      color: "#ff0",
+    },
   },
 };

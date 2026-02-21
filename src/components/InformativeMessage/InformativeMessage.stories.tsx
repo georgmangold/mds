@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import InformativeMessage from "./InformativeMessage";
 import { InformativeMessageProps } from "./InformativeMessage.types";
@@ -29,7 +29,7 @@ export default {
   argTypes: {},
 } as Meta<typeof InformativeMessage>;
 
-const Template: Story<InformativeMessageProps> = ({ ...props }) => {
+const Template: StoryFn<InformativeMessageProps> = ({ ...props }) => {
   return (
     <StoryThemeProvider>
       <GlobalStyles />
@@ -38,30 +38,42 @@ const Template: Story<InformativeMessageProps> = ({ ...props }) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  variant: "default",
-  title: "This is the title for a message",
-  message: "This is the content for an informative message",
+export const Default = {
+  render: Template,
+
+  args: {
+    variant: "default",
+    title: "This is the title for a message",
+    message: "This is the content for an informative message",
+  },
 };
 
-export const Success = Template.bind({});
-Success.args = {
-  variant: "success",
-  title: "This is the title for a message",
-  message: "This is the content for a success message",
+export const Success = {
+  render: Template,
+
+  args: {
+    variant: "success",
+    title: "This is the title for a message",
+    message: "This is the content for a success message",
+  },
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  variant: "warning",
-  title: "This is the title for a message",
-  message: "This is the content for an warning message",
+export const Warning = {
+  render: Template,
+
+  args: {
+    variant: "warning",
+    title: "This is the title for a message",
+    message: "This is the content for an warning message",
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  variant: "error",
-  title: "This is the title for a message",
-  message: "This is the content for an error message",
+export const Error = {
+  render: Template,
+
+  args: {
+    variant: "error",
+    title: "This is the title for a message",
+    message: "This is the content for an error message",
+  },
 };

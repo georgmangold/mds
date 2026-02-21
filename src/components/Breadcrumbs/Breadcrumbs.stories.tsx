@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import Breadcrumbs from "./Breadcrumbs";
 import { BreadcrumbsProps } from "./Breadcrumbs.types";
@@ -31,7 +31,7 @@ export default {
   argTypes: {},
 } as Meta<typeof Breadcrumbs>;
 
-const Template: Story<BreadcrumbsProps> = (args) => (
+const Template: StoryFn<BreadcrumbsProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <Breadcrumbs
@@ -86,5 +86,7 @@ const Template: Story<BreadcrumbsProps> = (args) => (
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  render: Template,
+  args: {},
+};

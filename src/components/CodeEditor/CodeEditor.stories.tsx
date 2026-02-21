@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import CodeEditor from "./CodeEditor";
 import { CodeEditorProps } from "./CodeEditor.types";
@@ -31,81 +31,96 @@ export default {
   argTypes: {},
 } as Meta<typeof CodeEditor>;
 
-const Template: Story<CodeEditorProps> = (args) => (
+const Template: StoryFn<CodeEditorProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <CodeEditor {...args} />
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "Some Code to Edit",
+export const Default = {
+  render: Template,
+
+  args: {
+    label: "Some Code to Edit",
+  },
 };
 
-export const WithHelpTools = Template.bind({});
-WithHelpTools.args = {
-  label: "Some Code to Edit",
-  helpTools: (
-    <Fragment>
-      <Button
-        id={"copy-demo"}
-        onClick={() => alert("CLICKED!")}
-        icon={<CopyIcon />}
-      />
-    </Fragment>
-  ),
-  mode: "js",
+export const WithHelpTools = {
+  render: Template,
+
+  args: {
+    label: "Some Code to Edit",
+    helpTools: (
+      <Fragment>
+        <Button
+          id={"copy-demo"}
+          onClick={() => alert("CLICKED!")}
+          icon={<CopyIcon />}
+        />
+      </Fragment>
+    ),
+    mode: "js",
+  },
 };
 
-export const WithTooltip = Template.bind({});
-WithTooltip.args = {
-  label: "Some Code to Edit",
-  helpTools: (
-    <Fragment>
-      <Button
-        id={"copy-demo"}
-        onClick={() => alert("CLICKED!")}
-        icon={<CopyIcon />}
-      />
-    </Fragment>
-  ),
-  tooltip: "This is a code editor",
+export const WithTooltip = {
+  render: Template,
+
+  args: {
+    label: "Some Code to Edit",
+    helpTools: (
+      <Fragment>
+        <Button
+          id={"copy-demo"}
+          onClick={() => alert("CLICKED!")}
+          icon={<CopyIcon />}
+        />
+      </Fragment>
+    ),
+    tooltip: "This is a code editor",
+  },
 };
 
-export const WithCustomStyles = Template.bind({});
-WithCustomStyles.args = {
-  label: "Some Code to Edit",
-  helpTools: (
-    <Fragment>
-      <Button
-        id={"copy-demo"}
-        onClick={() => alert("CLICKED!")}
-        icon={<CopyIcon />}
-      />
-    </Fragment>
-  ),
-  sx: {
-    "& .editor": {
-      backgroundColor: "#090",
+export const WithCustomStyles = {
+  render: Template,
+
+  args: {
+    label: "Some Code to Edit",
+    helpTools: (
+      <Fragment>
+        <Button
+          id={"copy-demo"}
+          onClick={() => alert("CLICKED!")}
+          icon={<CopyIcon />}
+        />
+      </Fragment>
+    ),
+    sx: {
+      "& .editor": {
+        backgroundColor: "#090",
+      },
     },
   },
 };
 
-export const ReadOnly = Template.bind({});
-ReadOnly.args = {
-  label: "Some Code Read Only",
-  helpTools: (
-    <Fragment>
-      <Button
-        id={"copy-demo"}
-        onClick={() => alert("CLICKED!")}
-        icon={<CopyIcon />}
-      />
-    </Fragment>
-  ),
-  tooltip: "This is a code editor",
-  readOnly: true,
-  value: '{"name":"John", "age":30, "car":null}',
-  disabled: false,
+export const ReadOnly = {
+  render: Template,
+
+  args: {
+    label: "Some Code Read Only",
+    helpTools: (
+      <Fragment>
+        <Button
+          id={"copy-demo"}
+          onClick={() => alert("CLICKED!")}
+          icon={<CopyIcon />}
+        />
+      </Fragment>
+    ),
+    tooltip: "This is a code editor",
+    readOnly: true,
+    value: '{"name":"John", "age":30, "car":null}',
+    disabled: false,
+  },
 };
