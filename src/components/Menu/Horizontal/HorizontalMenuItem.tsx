@@ -166,13 +166,13 @@ const HorizontalMenuItem: FC<MenuItemProps> = ({
   badge,
   currentPath,
   isVisible = true,
+  selected = false,
 }) => {
   const [open, setOpen] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = React.useState<
     (EventTarget & HTMLButtonElement) | null
   >(null);
 
-  let selected = false;
   if (currentPath && path) {
     if (currentPath.startsWith(path)) {
       selected = true;

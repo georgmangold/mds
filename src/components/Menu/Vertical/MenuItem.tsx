@@ -170,6 +170,7 @@ const MenuItem: FC<MenuItemProps> = ({
   currentPath,
   visibleTooltip = false,
   isVisible = true,
+  selected = false,
 }) => {
   const [open, setOpen] = useState<boolean>(false);
 
@@ -185,7 +186,6 @@ const MenuItem: FC<MenuItemProps> = ({
     }
   }, [currentPath, children]);
 
-  let selected = false;
   if (currentPath && path) {
     if (currentPath.startsWith(path)) {
       selected = true;
