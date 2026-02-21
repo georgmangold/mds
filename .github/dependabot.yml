@@ -12,6 +12,20 @@ updates:
     schedule:
       interval: "monthly"
       day: "thursday"
+    open-pull-requests-limit: 15
+    groups:
+      react:
+        applies-to: version-updates
+        patterns:
+          - "react"
+          - "@types/react"
+          - "react-dom"
+          - "@types/react-dom"
+        update-types:
+          - "major"
+          - "minor"
+          - "patch"
+        
 
   # GitHub Actions
   - package-ecosystem: "github-actions"
