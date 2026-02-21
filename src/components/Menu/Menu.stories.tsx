@@ -69,14 +69,6 @@ const Template: StoryFn<MenuProps> = ({
   );
 };
 
-export const Default = {
-  render: Template,
-
-  args: {
-    options,
-  },
-};
-
 const options = [
   {
     icon: <TestIcon />,
@@ -84,7 +76,7 @@ const options = [
     name: "Test 1",
     group: "Group 1",
     id: "test1",
-    onClick: (path) => {
+    onClick: (path: string) => {
       console.log("Custom Click Action", path);
     },
   },
@@ -93,7 +85,7 @@ const options = [
     name: "Test X",
     group: "Group 1",
     id: "testX",
-    onClick: (path) => {
+    onClick: (path: string) => {
       console.log("Custom Click Action NO PATH", path);
     },
   },
@@ -164,6 +156,14 @@ const options = [
   },
 ];
 
+export const Default = {
+  render: Template,
+
+  args: {
+    options,
+  },
+};
+
 export const SubpathSelected = {
   render: Template,
 
@@ -184,7 +184,7 @@ export const Horizontal = {
         name: "Test 1",
         group: "Group 1",
         id: "test1",
-        onClick: (path) => {
+        onClick: (path: string) => {
           console.log("Custom Click Action", path);
         },
       },
@@ -254,7 +254,7 @@ export const EndComponent = {
         name: "Test 1",
         group: "Group 1",
         id: "test1",
-        onClick: (path) => {
+        onClick: (path: string) => {
           console.log("Custom Click Action", path);
         },
       },

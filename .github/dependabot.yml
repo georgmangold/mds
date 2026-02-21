@@ -10,12 +10,12 @@ updates:
     # Look for `package.json` and `lock` files in the `root` directory
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "thursday"
 
   # GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "thursday"

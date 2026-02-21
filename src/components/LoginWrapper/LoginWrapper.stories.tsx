@@ -35,6 +35,16 @@ const Template: StoryFn<LoginWrapperProps> = (args) => (
   </StoryThemeProvider>
 );
 
+const demoInputStyles = {
+  width: "100%",
+  backgroundColor: "transparent",
+  border: "#00000020 1px solid",
+  borderRadius: "3px",
+  height: "30px",
+  marginBottom: "20px",
+  padding: "5px",
+};
+
 export const Default = {
   render: Template,
 
@@ -80,14 +90,4 @@ export const Default = {
       </Fragment>
     ),
   },
-};
-
-const demoInputStyles = {
-  width: "100%",
-  backgroundColor: "transparent",
-  border: "#00000020 1px solid",
-  borderRadius: "3px",
-  height: "30px",
-  marginBottom: "20px",
-  padding: "5px",
 };

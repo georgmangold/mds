@@ -1,13 +1,14 @@
+import { StorybookConfig } from "@storybook/react-webpack5";
 import remarkGfm from "remark-gfm";
 
-module.exports = {
-  stories: ["../src/**/**/*.mdx", "../src/**/**/*.stories.@(js|jsx|ts|tsx)"],
+const config: StorybookConfig = {
+  stories: ["../src/**/**/*.stories.@(js|jsx|ts|tsx)"],
   core: {
     disableTelemetry: true,
   },
   addons: [
     "@storybook/addon-links",
-    "storybook-dark-mode",
+    "@storybook-community/storybook-dark-mode",
     {
       name: "@storybook/addon-docs",
       options: {
@@ -19,7 +20,6 @@ module.exports = {
       },
     },
     "@storybook/addon-webpack5-compiler-babel",
-    "@chromatic-com/storybook",
   ],
   framework: {
     name: "@storybook/react-webpack5",
@@ -30,3 +30,5 @@ module.exports = {
     reactDocgen: "react-docgen-typescript",
   },
 };
+
+export default config;
