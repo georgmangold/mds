@@ -21,9 +21,9 @@ export default [
     makeAbsoluteExternalsRelative: true,
     plugins: [
       peerDepsExternal(),
-      resolve({ 
+      resolve({
         browser: true,
-       }),
+      }),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       terser(),

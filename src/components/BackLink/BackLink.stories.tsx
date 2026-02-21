@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import BackLink from "./BackLink";
 import { BackLinkProps } from "./BackLink.types";
@@ -30,14 +30,17 @@ export default {
   argTypes: {},
 } as Meta<typeof BackLink>;
 
-const Template: Story<BackLinkProps> = (args) => (
+const Template: StoryFn<BackLinkProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <BackLink {...args} onClick={() => alert("You clicked me!")} />
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "Click here to go back",
+export const Default = {
+  render: Template,
+
+  args: {
+    label: "Click here to go back",
+  },
 };

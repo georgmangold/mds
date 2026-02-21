@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import IconButton from "./IconButton";
 import { IconButtonProps } from "./IconButton.types";
@@ -31,7 +31,7 @@ export default {
   argTypes: {},
 } as Meta<typeof IconButton>;
 
-const Template: Story<IconButtonProps> = (args) => (
+const Template: StoryFn<IconButtonProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <IconButton {...args} onClick={() => alert("You clicked me!")}>
@@ -40,30 +40,45 @@ const Template: Story<IconButtonProps> = (args) => (
   </StoryThemeProvider>
 );
 
-export const SmallButton = Template.bind({});
-SmallButton.args = {
-  disabled: false,
-  size: "small",
+export const SmallButton = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    size: "small",
+  },
 };
 
-export const MediumButton = Template.bind({});
-MediumButton.args = {
-  disabled: false,
+export const MediumButton = {
+  render: Template,
+
+  args: {
+    disabled: false,
+  },
 };
 
-export const LargeButton = Template.bind({});
-LargeButton.args = {
-  disabled: false,
-  size: "large",
+export const LargeButton = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    size: "large",
+  },
 };
 
-export const CustomSize = Template.bind({});
-CustomSize.args = {
-  disabled: false,
-  size: "100px",
+export const CustomSize = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    size: "100px",
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
+export const Disabled = {
+  render: Template,
+
+  args: {
+    disabled: true,
+  },
 };

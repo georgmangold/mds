@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import InputLabel from "./InputLabel";
 import StoryThemeProvider from "../../utils/StoryThemeProvider";
@@ -28,31 +28,40 @@ export default {
   argTypes: {},
 } as Meta<typeof InputLabel>;
 
-const Template: Story<InputLabelProps> = (args) => (
+const Template: StoryFn<InputLabelProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <InputLabel {...args} />
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  children: "A label",
+export const Default = {
+  render: Template,
+
+  args: {
+    children: "A label",
+  },
 };
 
-export const NoMinWidth = Template.bind({});
-NoMinWidth.args = {
-  children: "A label",
-  noMinWidth: true,
+export const NoMinWidth = {
+  render: Template,
+
+  args: {
+    children: "A label",
+    noMinWidth: true,
+  },
 };
 
-export const CustomStyles = Template.bind({});
-CustomStyles.args = {
-  children: "A label",
-  sx: {
-    color: "#FFF",
-    "& span": {
-      backgroundColor: "#000",
+export const CustomStyles = {
+  render: Template,
+
+  args: {
+    children: "A label",
+    sx: {
+      color: "#FFF",
+      "& span": {
+        backgroundColor: "#000",
+      },
     },
   },
 };

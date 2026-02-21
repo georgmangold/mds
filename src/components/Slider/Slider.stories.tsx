@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import Slider from "./Slider";
 import { SliderProps } from "./Slider.types";
@@ -34,7 +34,7 @@ export default {
   argTypes: {},
 } as Meta<typeof Slider>;
 
-const Template: Story<SliderProps> = (args) => {
+const Template: StoryFn<SliderProps> = (args) => {
   const [value, setValue] = useState<number>(0);
   return (
     <StoryThemeProvider>
@@ -52,65 +52,86 @@ const Template: Story<SliderProps> = (args) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "Slide to select a value",
-  required: true,
-};
+export const Default = {
+  render: Template,
 
-export const DisabledSlider = Template.bind({});
-DisabledSlider.args = {
-  label: "Slide to select a value",
-  required: true,
-  disabled: true,
-  value: "Demo Text",
-};
-
-export const ErrorSlider = Template.bind({});
-ErrorSlider.args = {
-  label: "Slider with Error",
-  required: true,
-  error: "This is an error message",
-};
-
-export const WithTooltip = Template.bind({});
-WithTooltip.args = {
-  label: "Slide to select a value",
-  required: true,
-  tooltip: "Tooltip text",
-};
-
-export const DisplayValue = Template.bind({});
-DisplayValue.args = {
-  label: "Slide with visible value",
-  required: true,
-  tooltip: "Tooltip text",
-  displayValue: true,
-};
-
-export const CustomDisplayFunction = Template.bind({});
-CustomDisplayFunction.args = {
-  label: "Slide with visible value",
-  required: true,
-  tooltip: "Tooltip text",
-  displayValue: true,
-  min: 0,
-  max: 10,
-  step: 1,
-  marks: true,
-  displayValueFunction: (value) => {
-    return `${value} % Reduction`;
+  args: {
+    label: "Slide to select a value",
+    required: true,
   },
 };
 
-export const WithSteps = Template.bind({});
-WithSteps.args = {
-  label: "Slide with visible value",
-  required: true,
-  tooltip: "Tooltip text",
-  displayValue: true,
-  min: 0,
-  max: 10,
-  step: 1,
-  marks: true,
+export const DisabledSlider = {
+  render: Template,
+
+  args: {
+    label: "Slide to select a value",
+    required: true,
+    disabled: true,
+    value: "Demo Text",
+  },
+};
+
+export const ErrorSlider = {
+  render: Template,
+
+  args: {
+    label: "Slider with Error",
+    required: true,
+    error: "This is an error message",
+  },
+};
+
+export const WithTooltip = {
+  render: Template,
+
+  args: {
+    label: "Slide to select a value",
+    required: true,
+    tooltip: "Tooltip text",
+  },
+};
+
+export const DisplayValue = {
+  render: Template,
+
+  args: {
+    label: "Slide with visible value",
+    required: true,
+    tooltip: "Tooltip text",
+    displayValue: true,
+  },
+};
+
+export const CustomDisplayFunction = {
+  render: Template,
+
+  args: {
+    label: "Slide with visible value",
+    required: true,
+    tooltip: "Tooltip text",
+    displayValue: true,
+    min: 0,
+    max: 10,
+    step: 1,
+    marks: true,
+    displayValueFunction: (value) => {
+      return `${value} % Reduction`;
+    },
+  },
+};
+
+export const WithSteps = {
+  render: Template,
+
+  args: {
+    label: "Slide with visible value",
+    required: true,
+    tooltip: "Tooltip text",
+    displayValue: true,
+    min: 0,
+    max: 10,
+    step: 1,
+    marks: true,
+  },
 };

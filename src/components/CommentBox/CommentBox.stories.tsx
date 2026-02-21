@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import CommentBox from "./CommentBox";
 import { CommentBoxProps } from "./CommentBox.types";
@@ -30,7 +30,7 @@ export default {
   argTypes: {},
 } as Meta<typeof CommentBox>;
 
-const Template: Story<CommentBoxProps> = (args) => (
+const Template: StoryFn<CommentBoxProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <FormLayout>
@@ -39,31 +39,43 @@ const Template: Story<CommentBoxProps> = (args) => (
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "A Comment Box",
-  required: true,
-  placeholder: "A Placeholder",
+export const Default = {
+  render: Template,
+
+  args: {
+    label: "A Comment Box",
+    required: true,
+    placeholder: "A Placeholder",
+  },
 };
 
-export const DisabledInput = Template.bind({});
-DisabledInput.args = {
-  label: "A Comment Box",
-  required: true,
-  disabled: true,
-  value: "Demo Text",
+export const DisabledInput = {
+  render: Template,
+
+  args: {
+    label: "A Comment Box",
+    required: true,
+    disabled: true,
+    value: "Demo Text",
+  },
 };
 
-export const ErrorInput = Template.bind({});
-ErrorInput.args = {
-  label: "Input with Error",
-  required: true,
-  error: "This is an error message",
+export const ErrorInput = {
+  render: Template,
+
+  args: {
+    label: "Input with Error",
+    required: true,
+    error: "This is an error message",
+  },
 };
 
-export const WithTooltip = Template.bind({});
-WithTooltip.args = {
-  label: "A Comment Box",
-  required: true,
-  tooltip: "Tooltip text",
+export const WithTooltip = {
+  render: Template,
+
+  args: {
+    label: "A Comment Box",
+    required: true,
+    tooltip: "Tooltip text",
+  },
 };

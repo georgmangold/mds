@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 import ReadBox from "./ReadBox";
 import { ReadBoxProps } from "./ReadBox.types";
 import StoryThemeProvider from "../../utils/StoryThemeProvider";
@@ -31,7 +31,7 @@ export default {
   argTypes: {},
 } as Meta<typeof ReadBox>;
 
-const Template: Story<ReadBoxProps> = (args) => (
+const Template: StoryFn<ReadBoxProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <ReadBox {...args}>
@@ -46,34 +46,45 @@ const Template: Story<ReadBoxProps> = (args) => (
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const withLabel = Template.bind({});
-withLabel.args = {
-  label: "Share URL",
+export const Default = {
+  render: Template,
+  args: {},
 };
 
-export const multiLine = Template.bind({});
-multiLine.args = {
-  label: "Share URL",
-  multiLine: true,
+export const withLabel = {
+  render: Template,
+
+  args: {
+    label: "Share URL",
+  },
 };
 
-export const ActionButton = Template.bind({});
-ActionButton.args = {
-  multiLine: false,
-  actionButton: (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "flex-end",
-        paddingRight: "10px",
-      }}
-    >
-      <Tooltip tooltip={"Demo Tooltip for element"} placement={"left"}>
-        <TestIcon style={{ width: 20 }} />
-      </Tooltip>
-    </Box>
-  ),
+export const multiLine = {
+  render: Template,
+
+  args: {
+    label: "Share URL",
+    multiLine: true,
+  },
+};
+
+export const ActionButton = {
+  render: Template,
+
+  args: {
+    multiLine: false,
+    actionButton: (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "flex-end",
+          paddingRight: "10px",
+        }}
+      >
+        <Tooltip tooltip={"Demo Tooltip for element"} placement={"left"}>
+          <TestIcon style={{ width: 20 }} />
+        </Tooltip>
+      </Box>
+    ),
+  },
 };

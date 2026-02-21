@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import PageHeader from "./PageHeader";
 import { PageHeaderProps } from "./PageHeader.types";
@@ -30,95 +30,116 @@ export default {
   argTypes: {},
 } as Meta<typeof PageHeader>;
 
-const Template: Story<PageHeaderProps> = (args) => (
+const Template: StoryFn<PageHeaderProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <PageHeader {...args} />
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "Just Label",
+export const Default = {
+  render: Template,
+
+  args: {
+    label: "Just Label",
+  },
 };
 
-export const LabelAndSearch = Template.bind({});
-LabelAndSearch.args = {
-  label: "Label and Search",
-  middleComponent: (
-    <Fragment>
-      <input
-        type={"text"}
-        id={"test"}
-        style={{
-          width: "500px",
-          borderRadius: 3,
-          height: 30,
-          border: "#E5E5E5 1px solid",
-        }}
-      />
-    </Fragment>
-  ),
+export const LabelAndSearch = {
+  render: Template,
+
+  args: {
+    label: "Label and Search",
+    middleComponent: (
+      <Fragment>
+        <input
+          type={"text"}
+          id={"test"}
+          style={{
+            width: "500px",
+            borderRadius: 3,
+            height: 30,
+            border: "#E5E5E5 1px solid",
+          }}
+        />
+      </Fragment>
+    ),
+  },
 };
 
-export const LabelAndActions = Template.bind({});
-LabelAndActions.args = {
-  label: "Label and Search",
-  actions: (
-    <Fragment>
-      <Button id={"test1"} icon={<TestIcon />} />
-      <Button id={"test2"} icon={<TestIcon />} />
-      <Button id={"test3"} icon={<TestIcon />} />
-      <Button id={"test4"} icon={<TestIcon />} />
-      <Button id={"test5"} icon={<TestIcon />} />
-    </Fragment>
-  ),
+export const LabelAndActions = {
+  render: Template,
+
+  args: {
+    label: "Label and Search",
+    actions: (
+      <Fragment>
+        <Button id={"test1"} icon={<TestIcon />} />
+        <Button id={"test2"} icon={<TestIcon />} />
+        <Button id={"test3"} icon={<TestIcon />} />
+        <Button id={"test4"} icon={<TestIcon />} />
+        <Button id={"test5"} icon={<TestIcon />} />
+      </Fragment>
+    ),
+  },
 };
 
-export const LinkAsLabel = Template.bind({});
-LinkAsLabel.args = {
-  label: <a href={"#"}>&lt; Go Back</a>,
+export const LinkAsLabel = {
+  render: Template,
+
+  args: {
+    label: <a href={"#"}>&lt; Go Back</a>,
+  },
 };
 
-export const OtherComponents = Template.bind({});
-OtherComponents.args = {
-  label: <input type={"text"} />,
-  middleComponent: "Just some Text",
-  actions: <TestIcon />,
+export const OtherComponents = {
+  render: Template,
+
+  args: {
+    label: <input type={"text"} />,
+    middleComponent: "Just some Text",
+    actions: <TestIcon />,
+  },
 };
 
-export const FullComponentsSet = Template.bind({});
-FullComponentsSet.args = {
-  label: "TestLabel",
-  middleComponent: (
-    <Fragment>
-      <input
-        type={"text"}
-        id={"test"}
-        style={{
-          width: "500px",
-          borderRadius: 3,
-          height: 30,
-          border: "#E5E5E5 1px solid",
-        }}
-      />
-    </Fragment>
-  ),
-  actions: (
-    <Fragment>
-      <Button id={"test1"} icon={<TestIcon />} />
-      <Button id={"test2"} icon={<TestIcon />} />
-      <Button id={"test3"} icon={<TestIcon />} />
-      <Button id={"test4"} icon={<TestIcon />} />
-      <Button id={"test5"} icon={<TestIcon />} />
-    </Fragment>
-  ),
+export const FullComponentsSet = {
+  render: Template,
+
+  args: {
+    label: "TestLabel",
+    middleComponent: (
+      <Fragment>
+        <input
+          type={"text"}
+          id={"test"}
+          style={{
+            width: "500px",
+            borderRadius: 3,
+            height: 30,
+            border: "#E5E5E5 1px solid",
+          }}
+        />
+      </Fragment>
+    ),
+    actions: (
+      <Fragment>
+        <Button id={"test1"} icon={<TestIcon />} />
+        <Button id={"test2"} icon={<TestIcon />} />
+        <Button id={"test3"} icon={<TestIcon />} />
+        <Button id={"test4"} icon={<TestIcon />} />
+        <Button id={"test5"} icon={<TestIcon />} />
+      </Fragment>
+    ),
+  },
 };
 
-export const CustomStyles = Template.bind({});
-CustomStyles.args = {
-  label: "Just Label",
-  sx: {
-    backgroundColor: "#008800",
+export const CustomStyles = {
+  render: Template,
+
+  args: {
+    label: "Just Label",
+    sx: {
+      backgroundColor: "#008800",
+    },
   },
 };

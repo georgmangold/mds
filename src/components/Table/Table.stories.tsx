@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import StoryThemeProvider from "../../utils/StoryThemeProvider";
 import GlobalStyles from "../GlobalStyles/GlobalStyles";
@@ -33,7 +33,7 @@ export default {
   argTypes: {},
 } as Meta<typeof Table>;
 
-const Template: Story<TableComponentsExtraProps> = ({}) => {
+const Template: StoryFn<TableComponentsExtraProps> = ({}) => {
   return (
     <StoryThemeProvider>
       <GlobalStyles />
@@ -92,5 +92,7 @@ const Template: Story<TableComponentsExtraProps> = ({}) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  render: Template,
+  args: {},
+};

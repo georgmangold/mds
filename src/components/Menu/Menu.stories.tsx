@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import Menu from "./Menu";
 import { MenuProps } from "./Menu.types";
@@ -34,7 +34,7 @@ export default {
   argTypes: {},
 } as Meta<typeof Menu>;
 
-const Template: Story<MenuProps> = ({
+const Template: StoryFn<MenuProps> = ({
   options,
   horizontal,
   endComponent,
@@ -69,8 +69,6 @@ const Template: Story<MenuProps> = ({
   );
 };
 
-export const Default = Template.bind({});
-
 const options = [
   {
     icon: <TestIcon />,
@@ -78,7 +76,7 @@ const options = [
     name: "Test 1",
     group: "Group 1",
     id: "test1",
-    onClick: (path) => {
+    onClick: (path: string) => {
       console.log("Custom Click Action", path);
     },
   },
@@ -87,7 +85,7 @@ const options = [
     name: "Test X",
     group: "Group 1",
     id: "testX",
-    onClick: (path) => {
+    onClick: (path: string) => {
       console.log("Custom Click Action NO PATH", path);
     },
   },
@@ -158,178 +156,197 @@ const options = [
   },
 ];
 
-Default.args = {
-  options,
+export const Default = {
+  render: Template,
+
+  args: {
+    options,
+  },
 };
 
-export const SubpathSelected = Template.bind({});
+export const SubpathSelected = {
+  render: Template,
 
-SubpathSelected.args = {
-  options,
+  args: {
+    options,
+  },
 };
 
-export const Horizontal = Template.bind({});
+export const Horizontal = {
+  render: Template,
 
-Horizontal.args = {
-  horizontal: true,
-  options: [
-    {
-      icon: <ChatIcon />,
-      path: "/testPath1",
-      name: "Test 1",
-      group: "Group 1",
-      id: "test1",
-      onClick: (path) => {
-        console.log("Custom Click Action", path);
+  args: {
+    horizontal: true,
+    options: [
+      {
+        icon: <ChatIcon />,
+        path: "/testPath1",
+        name: "Test 1",
+        group: "Group 1",
+        id: "test1",
+        onClick: (path: string) => {
+          console.log("Custom Click Action", path);
+        },
       },
-    },
-    {
-      icon: <LambdaNotificationsIcon />,
-      name: "Test 5",
-      group: "Group 2",
-      id: "test2",
-      children: [
-        {
-          icon: <TestIcon />,
-          path: "/testPath1",
-          name: "Sublevel 1",
-          group: "Group 2",
-          id: "testl1",
-        },
-        {
-          icon: <TestIcon />,
-          path: "/subPath2",
-          name: "Sublevel 2",
-          group: "Group 2",
-          id: "testl2",
-        },
-        {
-          icon: <TestIcon />,
-          path: "/subPath3",
-          name: "Sublevel 3",
-          group: "Group 2",
-          id: "testl3",
-        },
-      ],
-    },
-  ],
-};
-
-export const MobileAutoDisabled = Template.bind({});
-
-MobileAutoDisabled.args = {
-  mobileModeAuto: false,
-  options,
-};
-
-export const VerticalNoOptions = Template.bind({});
-
-VerticalNoOptions.args = {};
-
-export const HorizontalNoOptions = Template.bind({});
-
-HorizontalNoOptions.args = {
-  horizontal: true,
-};
-
-export const EndComponent = Template.bind({});
-
-EndComponent.args = {
-  options: [
-    {
-      icon: <ChatIcon />,
-      path: "/testPath1",
-      name: "Test 1",
-      group: "Group 1",
-      id: "test1",
-      onClick: (path) => {
-        console.log("Custom Click Action", path);
+      {
+        icon: <LambdaNotificationsIcon />,
+        name: "Test 5",
+        group: "Group 2",
+        id: "test2",
+        children: [
+          {
+            icon: <TestIcon />,
+            path: "/testPath1",
+            name: "Sublevel 1",
+            group: "Group 2",
+            id: "testl1",
+          },
+          {
+            icon: <TestIcon />,
+            path: "/subPath2",
+            name: "Sublevel 2",
+            group: "Group 2",
+            id: "testl2",
+          },
+          {
+            icon: <TestIcon />,
+            path: "/subPath3",
+            name: "Sublevel 3",
+            group: "Group 2",
+            id: "testl3",
+          },
+        ],
       },
-    },
-    {
-      icon: <LambdaNotificationsIcon />,
-      name: "Test 5",
-      group: "Group 2",
-      id: "test5",
-      children: [
-        {
-          icon: <TestIcon />,
-          path: "/testPath1",
-          name: "Sublevel 1",
-          group: "Group 2",
-          id: "testl1",
-        },
-        {
-          icon: <TestIcon />,
-          path: "/subPath2",
-          name: "Sublevel 2",
-          group: "Group 2",
-          id: "testl2",
-        },
-        {
-          icon: <TestIcon />,
-          path: "/subPath3",
-          name: "Sublevel 3",
-          group: "Group 2",
-          id: "testl3",
-        },
-      ],
-    },
-  ],
-  endComponent: (
-    <>
-      <MenuItem
-        name={"Menu Element"}
-        icon={<TestIcon />}
-        onClick={() => alert("Extra!")}
-      />
-      <MenuItem
-        name={"Menu Element 2"}
-        icon={<TestIcon />}
-        onClick={() => alert("Extra!")}
-      />
-    </>
-  ),
+    ],
+  },
 };
 
-export const VerticalMiddleComponent = Template.bind({});
+export const MobileAutoDisabled = {
+  render: Template,
 
-VerticalMiddleComponent.args = {
-  middleComponent: (
-    <>
-      <a href={"https://min.io"}>External Link</a>
-      <a href={"https://min.io"}>External Link</a>
-      <a href={"https://min.io"}>External Link</a>
-      <a href={"https://min.io"}>External Link</a>
-    </>
-  ),
-  endComponent: (
-    <>
-      <MenuItem
-        name={"Menu Element"}
-        icon={<TestIcon />}
-        onClick={() => alert("Extra!")}
-      />
-      <MenuItem
-        name={"Menu Element 2"}
-        icon={<TestIcon />}
-        onClick={() => alert("Extra!")}
-      />
-    </>
-  ),
+  args: {
+    mobileModeAuto: false,
+    options,
+  },
 };
 
-export const EndComponentHorizontal = Template.bind({});
+export const VerticalNoOptions = {
+  render: Template,
+  args: {},
+};
 
-EndComponentHorizontal.args = {
-  horizontal: true,
-  endComponent: (
-    <Box sx={{ display: "flex", justifyContent: "center" }}>
-      <Button
-        id={"randon-button"}
-        icon={<TestIcon />}
-        onClick={() => alert("Extra!")}
-      />
-    </Box>
-  ),
+export const HorizontalNoOptions = {
+  render: Template,
+
+  args: {
+    horizontal: true,
+  },
+};
+
+export const EndComponent = {
+  render: Template,
+
+  args: {
+    options: [
+      {
+        icon: <ChatIcon />,
+        path: "/testPath1",
+        name: "Test 1",
+        group: "Group 1",
+        id: "test1",
+        onClick: (path: string) => {
+          console.log("Custom Click Action", path);
+        },
+      },
+      {
+        icon: <LambdaNotificationsIcon />,
+        name: "Test 5",
+        group: "Group 2",
+        id: "test5",
+        children: [
+          {
+            icon: <TestIcon />,
+            path: "/testPath1",
+            name: "Sublevel 1",
+            group: "Group 2",
+            id: "testl1",
+          },
+          {
+            icon: <TestIcon />,
+            path: "/subPath2",
+            name: "Sublevel 2",
+            group: "Group 2",
+            id: "testl2",
+          },
+          {
+            icon: <TestIcon />,
+            path: "/subPath3",
+            name: "Sublevel 3",
+            group: "Group 2",
+            id: "testl3",
+          },
+        ],
+      },
+    ],
+    endComponent: (
+      <>
+        <MenuItem
+          name={"Menu Element"}
+          icon={<TestIcon />}
+          onClick={() => alert("Extra!")}
+        />
+        <MenuItem
+          name={"Menu Element 2"}
+          icon={<TestIcon />}
+          onClick={() => alert("Extra!")}
+        />
+      </>
+    ),
+  },
+};
+
+export const VerticalMiddleComponent = {
+  render: Template,
+
+  args: {
+    middleComponent: (
+      <>
+        <a href={"https://min.io"}>External Link</a>
+        <a href={"https://min.io"}>External Link</a>
+        <a href={"https://min.io"}>External Link</a>
+        <a href={"https://min.io"}>External Link</a>
+      </>
+    ),
+    endComponent: (
+      <>
+        <MenuItem
+          name={"Menu Element"}
+          icon={<TestIcon />}
+          onClick={() => alert("Extra!")}
+        />
+        <MenuItem
+          name={"Menu Element 2"}
+          icon={<TestIcon />}
+          onClick={() => alert("Extra!")}
+        />
+      </>
+    ),
+  },
+};
+
+export const EndComponentHorizontal = {
+  render: Template,
+
+  args: {
+    horizontal: true,
+    endComponent: (
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Button
+          id={"randon-button"}
+          icon={<TestIcon />}
+          onClick={() => alert("Extra!")}
+        />
+      </Box>
+    ),
+  },
 };

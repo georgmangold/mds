@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import FileSelector from "./FileSelector";
 import { FileSelectorProps } from "./FileSelector.types";
@@ -30,7 +30,7 @@ export default {
   argTypes: {},
 } as Meta<typeof FileSelector>;
 
-const Template: Story<FileSelectorProps> = ({
+const Template: StoryFn<FileSelectorProps> = ({
   label,
   required,
   disabled,
@@ -70,37 +70,52 @@ const Template: Story<FileSelectorProps> = ({
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "Select a File",
-  required: true,
+export const Default = {
+  render: Template,
+
+  args: {
+    label: "Select a File",
+    required: true,
+  },
 };
 
-export const DisabledInput = Template.bind({});
-DisabledInput.args = {
-  label: "Select a File",
-  required: true,
-  disabled: true,
+export const DisabledInput = {
+  render: Template,
+
+  args: {
+    label: "Select a File",
+    required: true,
+    disabled: true,
+  },
 };
 
-export const ErrorInput = Template.bind({});
-ErrorInput.args = {
-  label: "Input with Error",
-  required: true,
-  error: "This is an error message",
+export const ErrorInput = {
+  render: Template,
+
+  args: {
+    label: "Input with Error",
+    required: true,
+    error: "This is an error message",
+  },
 };
 
-export const WithTooltip = Template.bind({});
-WithTooltip.args = {
-  label: "Select a File",
-  required: true,
-  tooltip: "Tooltip text",
+export const WithTooltip = {
+  render: Template,
+
+  args: {
+    label: "Select a File",
+    required: true,
+    tooltip: "Tooltip text",
+  },
 };
 
-export const ReturnBase64Data = Template.bind({});
-ReturnBase64Data.args = {
-  label: "Select a File",
-  required: true,
-  tooltip: "Tooltip text",
-  returnEncodedData: true,
+export const ReturnBase64Data = {
+  render: Template,
+
+  args: {
+    label: "Select a File",
+    required: true,
+    tooltip: "Tooltip text",
+    returnEncodedData: true,
+  },
 };

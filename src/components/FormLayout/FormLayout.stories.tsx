@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import FormLayout from "./FormLayout";
 import { FormLayoutProps } from "./FormLayout.types";
@@ -33,7 +33,7 @@ export default {
   argTypes: {},
 } as Meta<typeof FormLayout>;
 
-const Template: Story<FormLayoutProps> = (args) => (
+const Template: StoryFn<FormLayoutProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <FormLayout {...args} title={"Form Title"} icon={<TestIcon />}>
@@ -43,50 +43,64 @@ const Template: Story<FormLayoutProps> = (args) => (
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const WithHelpBox = Template.bind({});
-WithHelpBox.args = {
-  helpBox: (
-    <HelpBox
-      iconComponent={<TestIcon />}
-      title={"Help Title"}
-      help={"Help Text"}
-    />
-  ),
+export const Default = {
+  render: Template,
+  args: {},
 };
 
-export const FormLayoutWithCustomStyles = Template.bind({});
-FormLayoutWithCustomStyles.args = {
-  sx: {
-    color: "#fff",
-    backgroundColor: "#460",
-    borderColor: "#f9a",
+export const WithHelpBox = {
+  render: Template,
+
+  args: {
+    helpBox: (
+      <HelpBox
+        iconComponent={<TestIcon />}
+        title={"Help Title"}
+        help={"Help Text"}
+      />
+    ),
   },
 };
 
-export const NoBorder = Template.bind({});
-NoBorder.args = {
-  withBorders: false,
-  helpBox: (
-    <HelpBox
-      iconComponent={<TestIcon />}
-      title={"Help Title"}
-      help={"Help Text"}
-    />
-  ),
+export const FormLayoutWithCustomStyles = {
+  render: Template,
+
+  args: {
+    sx: {
+      color: "#fff",
+      backgroundColor: "#460",
+      borderColor: "#f9a",
+    },
+  },
 };
 
-export const NoBorderAndPadding = Template.bind({});
-NoBorderAndPadding.args = {
-  withBorders: false,
-  containerPadding: false,
-  helpBox: (
-    <HelpBox
-      iconComponent={<TestIcon />}
-      title={"Help Title"}
-      help={"Help Text"}
-    />
-  ),
+export const NoBorder = {
+  render: Template,
+
+  args: {
+    withBorders: false,
+    helpBox: (
+      <HelpBox
+        iconComponent={<TestIcon />}
+        title={"Help Title"}
+        help={"Help Text"}
+      />
+    ),
+  },
+};
+
+export const NoBorderAndPadding = {
+  render: Template,
+
+  args: {
+    withBorders: false,
+    containerPadding: false,
+    helpBox: (
+      <HelpBox
+        iconComponent={<TestIcon />}
+        title={"Help Title"}
+        help={"Help Text"}
+      />
+    ),
+  },
 };

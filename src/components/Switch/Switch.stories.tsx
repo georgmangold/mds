@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import Switch from "./Switch";
 import StoryThemeProvider from "../../utils/StoryThemeProvider";
@@ -28,7 +28,7 @@ export default {
   argTypes: {},
 } as Meta<typeof Switch>;
 
-const Template: Story<SwitchProps> = ({
+const Template: StoryFn<SwitchProps> = ({
   id,
   label,
   tooltip,
@@ -63,77 +63,98 @@ const Template: Story<SwitchProps> = ({
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "Click to confirm",
-  id: "Switch",
-  onClick: () => {
-    console.log("click");
+export const Default = {
+  render: Template,
+
+  args: {
+    label: "Click to confirm",
+    id: "Switch",
+    onClick: () => {
+      console.log("click");
+    },
   },
 };
 
-export const WithTooltip = Template.bind({});
-WithTooltip.args = {
-  label: "Click to confirm",
-  id: "Switch",
-  onClick: () => {
-    console.log("click");
+export const WithTooltip = {
+  render: Template,
+
+  args: {
+    label: "Click to confirm",
+    id: "Switch",
+    onClick: () => {
+      console.log("click");
+    },
+    tooltip: "test",
   },
-  tooltip: "test",
 };
 
-export const DisabledSwitch = Template.bind({});
-DisabledSwitch.args = {
-  label: "Click to confirm",
-  id: "Switch",
-  onClick: () => {
-    console.log("click");
+export const DisabledSwitch = {
+  render: Template,
+
+  args: {
+    label: "Click to confirm",
+    id: "Switch",
+    onClick: () => {
+      console.log("click");
+    },
+    tooltip: "test",
+    disabled: true,
+    checked: false,
   },
-  tooltip: "test",
-  disabled: true,
-  checked: false,
 };
 
-export const ActiveDisabledSwitch = Template.bind({});
-ActiveDisabledSwitch.args = {
-  label: "Click to confirm",
-  id: "Switch",
-  onClick: () => {
-    console.log("click");
+export const ActiveDisabledSwitch = {
+  render: Template,
+
+  args: {
+    label: "Click to confirm",
+    id: "Switch",
+    onClick: () => {
+      console.log("click");
+    },
+    tooltip: "test",
+    disabled: true,
+    checked: true,
   },
-  tooltip: "test",
-  disabled: true,
-  checked: true,
 };
 
-export const WithDescription = Template.bind({});
-WithDescription.args = {
-  label: "Click to confirm",
-  id: "Switch",
-  onClick: () => {
-    console.log("click");
+export const WithDescription = {
+  render: Template,
+
+  args: {
+    label: "Click to confirm",
+    id: "Switch",
+    onClick: () => {
+      console.log("click");
+    },
+    description: "This text describes what this switch is meant to do",
   },
-  description: "This text describes what this switch is meant to do",
 };
 
-export const CustomIndicatorLabels = Template.bind({});
-CustomIndicatorLabels.args = {
-  label: "Click to confirm",
-  id: "Switch",
-  onClick: () => {
-    console.log("click");
+export const CustomIndicatorLabels = {
+  render: Template,
+
+  args: {
+    label: "Click to confirm",
+    id: "Switch",
+    onClick: () => {
+      console.log("click");
+    },
+    description: "This text describes what this switch is meant to do",
+    indicatorLabels: ["Enabled", "Disabled"],
   },
-  description: "This text describes what this switch is meant to do",
-  indicatorLabels: ["Enabled", "Disabled"],
 };
 
-export const OnlySwitch = Template.bind({});
-OnlySwitch.args = {
-  label: "Click to confirm",
-  id: "Switch",
-  onClick: () => {
-    console.log("click");
+export const OnlySwitch = {
+  render: Template,
+
+  args: {
+    label: "Click to confirm",
+    id: "Switch",
+    onClick: () => {
+      console.log("click");
+    },
+    switchOnly: true,
+    description: "This text describes what this switch is meant to do",
   },
-  switchOnly: true,
-  description: "This text describes what this switch is meant to do",
 };

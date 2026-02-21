@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import Link from "./Link";
 import { LinkProps } from "./Link.types";
@@ -29,7 +29,7 @@ export default {
   argTypes: {},
 } as Meta<typeof Link>;
 
-const Template: Story<LinkProps> = (args) => (
+const Template: StoryFn<LinkProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <span style={{ fontSize: 16 }}>
@@ -42,13 +42,18 @@ const Template: Story<LinkProps> = (args) => (
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  render: Template,
+  args: {},
+};
 
-export const CustomStyles = Template.bind({});
-CustomStyles.args = {
-  sx: {
-    backgroundColor: "#f87",
-    color: "#fff",
+export const CustomStyles = {
+  render: Template,
+
+  args: {
+    sx: {
+      backgroundColor: "#f87",
+      color: "#fff",
+    },
   },
 };

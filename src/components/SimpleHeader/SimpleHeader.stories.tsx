@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import SimpleHeader from "./SimpleHeader";
 import { SimpleHeaderProps } from "./SimpleHeader.types";
@@ -30,30 +30,39 @@ export default {
   argTypes: {},
 } as Meta<typeof SimpleHeader>;
 
-const Template: Story<SimpleHeaderProps> = (args) => (
+const Template: StoryFn<SimpleHeaderProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <SimpleHeader {...args} />
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "Simple Header",
+export const Default = {
+  render: Template,
+
+  args: {
+    label: "Simple Header",
+  },
 };
 
-export const WithIcon = Template.bind({});
-WithIcon.args = {
-  label: "Simple Header",
-  icon: <TestIcon />,
+export const WithIcon = {
+  render: Template,
+
+  args: {
+    label: "Simple Header",
+    icon: <TestIcon />,
+  },
 };
 
-export const CustomStyles = Template.bind({});
-CustomStyles.args = {
-  label: "Label and Search",
-  icon: <TestIcon />,
-  sx: {
-    borderBottom: "#0f0 1px solid",
-    color: "#f0f",
+export const CustomStyles = {
+  render: Template,
+
+  args: {
+    label: "Label and Search",
+    icon: <TestIcon />,
+    sx: {
+      borderBottom: "#0f0 1px solid",
+      color: "#f0f",
+    },
   },
 };

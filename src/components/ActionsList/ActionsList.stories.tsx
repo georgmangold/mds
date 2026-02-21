@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import ActionsList from "./ActionsList";
 import { ActionsListProps } from "./ActionsList.types";
@@ -30,69 +30,75 @@ export default {
   argTypes: {},
 } as Meta<typeof ActionsList>;
 
-const Template: Story<ActionsListProps> = (args) => (
+const Template: StoryFn<ActionsListProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <ActionsList {...args} />
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  title: "Actions Panel Title",
-  items: [
-    {
-      action: () => alert("Action clicked"),
-      icon: <TestIcon />,
-      label: "Test Action",
-      tooltip: "Action tooltip",
-      disabled: false,
-    },
-    {
-      action: () => alert("you shouldn't see this"),
-      icon: <TestIcon />,
-      label: "Disabled Test Action",
-      tooltip: "Disabled action tooltip",
-      disabled: true,
-    },
-    {
-      action: () => alert("No tooltip clicked"),
-      icon: <TestIcon />,
-      label: "No Tooltip",
-      tooltip: "",
-      disabled: false,
-    },
-  ],
+export const Default = {
+  render: Template,
+
+  args: {
+    title: "Actions Panel Title",
+    items: [
+      {
+        action: () => alert("Action clicked"),
+        icon: <TestIcon />,
+        label: "Test Action",
+        tooltip: "Action tooltip",
+        disabled: false,
+      },
+      {
+        action: () => alert("you shouldn't see this"),
+        icon: <TestIcon />,
+        label: "Disabled Test Action",
+        tooltip: "Disabled action tooltip",
+        disabled: true,
+      },
+      {
+        action: () => alert("No tooltip clicked"),
+        icon: <TestIcon />,
+        label: "No Tooltip",
+        tooltip: "",
+        disabled: false,
+      },
+    ],
+  },
 };
 
-export const TitleWithIcon = Template.bind({});
-TitleWithIcon.args = {
-  title: (
-    <span style={{ display: "inline-flex", alignItems: "center" }}>
-      <TestIcon style={{ marginRight: 10 }} /> Custom Node Title
-    </span>
-  ),
-  items: [
-    {
-      action: () => alert("Action clicked"),
-      icon: <TestIcon />,
-      label: "Test Action",
-      tooltip: "Action tooltip",
-      disabled: false,
-    },
-    {
-      action: () => alert("you shouldn't see this"),
-      icon: <TestIcon />,
-      label: "Disabled Test Action",
-      tooltip: "Disabled action tooltip",
-      disabled: true,
-    },
-    {
-      action: () => alert("No tooltip clicked"),
-      icon: <TestIcon />,
-      label: "No Tooltip",
-      tooltip: "",
-      disabled: false,
-    },
-  ],
+export const TitleWithIcon = {
+  render: Template,
+
+  args: {
+    title: (
+      <span style={{ display: "inline-flex", alignItems: "center" }}>
+        <TestIcon style={{ marginRight: 10 }} /> Custom Node Title
+      </span>
+    ),
+    items: [
+      {
+        action: () => alert("Action clicked"),
+        icon: <TestIcon />,
+        label: "Test Action",
+        tooltip: "Action tooltip",
+        disabled: false,
+      },
+      {
+        action: () => alert("you shouldn't see this"),
+        icon: <TestIcon />,
+        label: "Disabled Test Action",
+        tooltip: "Disabled action tooltip",
+        disabled: true,
+      },
+      {
+        action: () => alert("No tooltip clicked"),
+        icon: <TestIcon />,
+        label: "No Tooltip",
+        tooltip: "",
+        disabled: false,
+      },
+    ],
+  },
 };

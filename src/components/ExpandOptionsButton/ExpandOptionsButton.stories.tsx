@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import ExpandOptionsButton from "./ExpandOptionsButton";
 import { ExpandOptionsButtonProps } from "./ExpandOptionsButton.types";
@@ -30,7 +30,7 @@ export default {
   argTypes: {},
 } as Meta<typeof ExpandOptionsButton>;
 
-const Template: Story<ExpandOptionsButtonProps> = (args) => {
+const Template: StoryFn<ExpandOptionsButtonProps> = (args) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const extraArgs = {
@@ -54,26 +54,35 @@ const Template: Story<ExpandOptionsButtonProps> = (args) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  disabled: false,
-  label: "Click to Expand an Option",
-  variant: "regular",
+export const Default = {
+  render: Template,
+
+  args: {
+    disabled: false,
+    label: "Click to Expand an Option",
+    variant: "regular",
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
-  label: "Click to Expand an Option",
-  variant: "regular",
+export const Disabled = {
+  render: Template,
+
+  args: {
+    disabled: true,
+    label: "Click to Expand an Option",
+    variant: "regular",
+  },
 };
 
-export const CustomStyles = Template.bind({});
-CustomStyles.args = {
-  label: "Click to Expand an Option",
-  variant: "regular",
-  sx: {
-    color: "#000",
-    backgroundColor: "#f90",
+export const CustomStyles = {
+  render: Template,
+
+  args: {
+    label: "Click to Expand an Option",
+    variant: "regular",
+    sx: {
+      color: "#000",
+      backgroundColor: "#f90",
+    },
   },
 };

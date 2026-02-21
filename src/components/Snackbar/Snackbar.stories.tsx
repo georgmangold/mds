@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import Snackbar from "./Snackbar";
 import { SnackbarProps } from "./Snackbar.types";
@@ -29,7 +29,7 @@ export default {
   argTypes: {},
 } as Meta<typeof Snackbar>;
 
-const Template: Story<SnackbarProps> = ({
+const Template: StoryFn<SnackbarProps> = ({
   message,
   closeButton,
   variant,
@@ -61,90 +61,123 @@ const Template: Story<SnackbarProps> = ({
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  message: "This is a notice message",
-  closeButton: true,
+export const Default = {
+  render: Template,
+
+  args: {
+    message: "This is a notice message",
+    closeButton: true,
+  },
 };
 
-export const Success = Template.bind({});
-Success.args = {
-  message: "This is a success message",
-  closeButton: true,
-  autoHideDuration: 0,
-  variant: "success",
+export const Success = {
+  render: Template,
+
+  args: {
+    message: "This is a success message",
+    closeButton: true,
+    autoHideDuration: 0,
+    variant: "success",
+  },
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  message: "This is a warning message",
-  closeButton: true,
-  autoHideDuration: 0,
-  variant: "warning",
+export const Warning = {
+  render: Template,
+
+  args: {
+    message: "This is a warning message",
+    closeButton: true,
+    autoHideDuration: 0,
+    variant: "warning",
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  message: "This is an error message",
-  closeButton: true,
-  autoHideDuration: 0,
-  variant: "error",
+export const Error = {
+  render: Template,
+
+  args: {
+    message: "This is an error message",
+    closeButton: true,
+    autoHideDuration: 0,
+    variant: "error",
+  },
 };
 
-export const NoCloseButton = Template.bind({});
-NoCloseButton.args = {
-  message: "This is an error message",
-  closeButton: false,
-  variant: "error",
+export const NoCloseButton = {
+  render: Template,
+
+  args: {
+    message: "This is an error message",
+    closeButton: false,
+    variant: "error",
+  },
 };
 
-export const LongTextTruncation = Template.bind({});
-LongTextTruncation.args = {
-  message:
-    "Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar ",
-  closeButton: true,
-  autoHideDuration: 0,
+export const LongTextTruncation = {
+  render: Template,
+
+  args: {
+    message:
+      "Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar ",
+    closeButton: true,
+    autoHideDuration: 0,
+  },
 };
 
-export const AutoHideDuration = Template.bind({});
-AutoHideDuration.args = {
-  message:
-    "Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar ",
-  closeButton: true,
-  autoHideDuration: 2,
+export const AutoHideDuration = {
+  render: Template,
+
+  args: {
+    message:
+      "Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar ",
+    closeButton: true,
+    autoHideDuration: 2,
+  },
 };
 
-export const Condensed = Template.bind({});
-Condensed.args = {
-  message: "Small Notification",
-  closeButton: false,
-  autoHideDuration: 0,
-  condensed: true,
+export const Condensed = {
+  render: Template,
+
+  args: {
+    message: "Small Notification",
+    closeButton: false,
+    autoHideDuration: 0,
+    condensed: true,
+  },
 };
 
-export const CondensedWithClose = Template.bind({});
-CondensedWithClose.args = {
-  message: "Small Notification",
-  closeButton: true,
-  autoHideDuration: 10,
-  condensed: true,
+export const CondensedWithClose = {
+  render: Template,
+
+  args: {
+    message: "Small Notification",
+    closeButton: true,
+    autoHideDuration: 10,
+    condensed: true,
+  },
 };
 
-export const CondensedWithLargeText = Template.bind({});
-CondensedWithLargeText.args = {
-  message:
-    "Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar ",
-  closeButton: true,
-  autoHideDuration: 0,
-  condensed: true,
+export const CondensedWithLargeText = {
+  render: Template,
+
+  args: {
+    message:
+      "Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar ",
+    closeButton: true,
+    autoHideDuration: 0,
+    condensed: true,
+  },
 };
 
-export const InlineMode = Template.bind({});
-InlineMode.args = {
-  message:
-    "Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar ",
-  closeButton: true,
-  autoHideDuration: 0,
-  condensed: true,
-  mode: "inline",
+export const InlineMode = {
+  render: Template,
+
+  args: {
+    message:
+      "Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar Super long text message to test truncate functionality in this snackbar ",
+    closeButton: true,
+    autoHideDuration: 0,
+    condensed: true,
+    mode: "inline",
+  },
 };

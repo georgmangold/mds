@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import HelpBox from "./HelpBox";
 import { HelpBoxProps } from "./HelpBox.types";
@@ -30,27 +30,36 @@ export default {
   argTypes: {},
 } as Meta<typeof HelpBox>;
 
-const Template: Story<HelpBoxProps> = (args) => (
+const Template: StoryFn<HelpBoxProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <HelpBox {...args} />
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  iconComponent: <TestIcon />,
-  help: "This is the text that will be rendered for help",
-  title: "Help Available for this page.",
+export const Default = {
+  render: Template,
+
+  args: {
+    iconComponent: <TestIcon />,
+    help: "This is the text that will be rendered for help",
+    title: "Help Available for this page.",
+  },
 };
 
-export const NoHelpText = Template.bind({});
-NoHelpText.args = {
-  iconComponent: <TestIcon />,
-  title: "Help Available for this page.",
+export const NoHelpText = {
+  render: Template,
+
+  args: {
+    iconComponent: <TestIcon />,
+    title: "Help Available for this page.",
+  },
 };
 
-export const NoIcon = Template.bind({});
-NoIcon.args = {
-  title: "Help Available for this page.",
+export const NoIcon = {
+  render: Template,
+
+  args: {
+    title: "Help Available for this page.",
+  },
 };

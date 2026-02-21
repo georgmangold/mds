@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import DropdownSelector from "./DropdownSelector";
 import { DropdownSelectorProps } from "./DropdownSelector.types";
@@ -32,7 +32,7 @@ export default {
   argTypes: {},
 } as Meta<typeof DropdownSelector>;
 
-const Template: Story<DropdownSelectorProps> = (args) => {
+const Template: StoryFn<DropdownSelectorProps> = (args) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const openDownloadMenu = Boolean(anchorEl);
 
@@ -62,19 +62,25 @@ const Template: Story<DropdownSelectorProps> = (args) => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  options: [
-    { label: "Test Label 1", value: "tl1" },
-    { label: "Test Label 2", value: "tl2" },
-  ],
+export const Default = {
+  render: Template,
+
+  args: {
+    options: [
+      { label: "Test Label 1", value: "tl1" },
+      { label: "Test Label 2", value: "tl2" },
+    ],
+  },
 };
 
-export const AnchorEnd = Template.bind({});
-AnchorEnd.args = {
-  options: [
-    { label: "Test Label 1", value: "tl1" },
-    { label: "Test Label 2", value: "tl2" },
-  ],
-  anchorOrigin: "end",
+export const AnchorEnd = {
+  render: Template,
+
+  args: {
+    options: [
+      { label: "Test Label 1", value: "tl1" },
+      { label: "Test Label 2", value: "tl2" },
+    ],
+    anchorOrigin: "end",
+  },
 };

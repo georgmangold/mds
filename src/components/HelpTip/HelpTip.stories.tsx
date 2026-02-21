@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import HelpTip from "./HelpTip";
 import StoryThemeProvider from "../../utils/StoryThemeProvider";
@@ -30,7 +30,7 @@ export default {
   argTypes: {},
 } as Meta<typeof HelpTip>;
 
-const Template: Story<HelpTipProps> = (args) => (
+const Template: StoryFn<HelpTipProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
     <Grid container>
@@ -94,41 +94,56 @@ const Template: Story<HelpTipProps> = (args) => (
   </StoryThemeProvider>
 );
 
-export const Bottom = Template.bind({});
-Bottom.args = {
-  tooltip: <span>Some tooltip Label</span>,
-  placement: "bottom",
-  content: <span>A span block</span>,
+export const Bottom = {
+  render: Template,
+
+  args: {
+    tooltip: <span>Some tooltip Label</span>,
+    placement: "bottom",
+    content: <span>A span block</span>,
+  },
 };
 
-export const Top = Template.bind({});
-Top.args = {
-  tooltip: <span>Some tooltip Label</span>,
-  placement: "top",
-  children: <div>A div with some content</div>,
+export const Top = {
+  render: Template,
+
+  args: {
+    tooltip: <span>Some tooltip Label</span>,
+    placement: "top",
+    children: <div>A div with some content</div>,
+  },
 };
 
-export const Left = Template.bind({});
-Left.args = {
-  tooltip: <span>Some tooltip Label</span>,
-  placement: "left",
-  children: <a href={"#"}>A link</a>,
+export const Left = {
+  render: Template,
+
+  args: {
+    tooltip: <span>Some tooltip Label</span>,
+    placement: "left",
+    children: <a href={"#"}>A link</a>,
+  },
 };
 
-export const Right = Template.bind({});
-Right.args = {
-  tooltip: <span>Some tooltip Label</span>,
-  placement: "right",
-  children: <Button id={"testButton1"}>Enabled Button</Button>,
+export const Right = {
+  render: Template,
+
+  args: {
+    tooltip: <span>Some tooltip Label</span>,
+    placement: "right",
+    children: <Button id={"testButton1"}>Enabled Button</Button>,
+  },
 };
 
-export const OnDisabledElement = Template.bind({});
-OnDisabledElement.args = {
-  tooltip: <span>Some tooltip Label</span>,
-  placement: "top",
-  children: (
-    <Button id={"testButton"} disabled style={{ pointerEvents: "none" }}>
-      Button
-    </Button>
-  ),
+export const OnDisabledElement = {
+  render: Template,
+
+  args: {
+    tooltip: <span>Some tooltip Label</span>,
+    placement: "top",
+    children: (
+      <Button id={"testButton"} disabled style={{ pointerEvents: "none" }}>
+        Button
+      </Button>
+    ),
+  },
 };

@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 import ThemedLogo from "./ThemedLogo";
 import StoryThemeProvider from "../../utils/StoryThemeProvider";
 import GlobalStyles from "../GlobalStyles/GlobalStyles";
@@ -26,12 +26,14 @@ export default {
   argTypes: {},
 } as Meta<typeof ThemedLogo>;
 
-const Template: Story = () => (
+const Template: StoryFn = () => (
   <StoryThemeProvider>
     <GlobalStyles />
     <ThemedLogo />
   </StoryThemeProvider>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = {
+  render: Template,
+  args: {},
+};

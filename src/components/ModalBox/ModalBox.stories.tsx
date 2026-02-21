@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react-webpack5";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 
 import ModalBox from "./ModalBox";
 import { ModalBoxProps } from "./ModalBox.types";
@@ -30,7 +30,7 @@ export default {
   argTypes: {},
 } as Meta<typeof ModalBox>;
 
-const Template: Story<ModalBoxProps> = ({
+const Template: StoryFn<ModalBoxProps> = ({
   title,
   sx,
   titleIcon,
@@ -102,59 +102,73 @@ const Template: Story<ModalBoxProps> = ({
   );
 };
 
-export const Default = Template.bind({});
+export const Default = {
+  render: Template,
 
-Default.args = {
-  title: "Test Title",
-  titleIcon: <TestIcon />,
+  args: {
+    title: "Test Title",
+    titleIcon: <TestIcon />,
+  },
 };
 
-export const NoIcon = Template.bind({});
+export const NoIcon = {
+  render: Template,
 
-NoIcon.args = {
-  title: "Test Title",
+  args: {
+    title: "Test Title",
+  },
 };
 
-export const NoWidthLimit = Template.bind({});
+export const NoWidthLimit = {
+  render: Template,
 
-NoWidthLimit.args = {
-  title: "Test Title",
-  widthLimit: false,
+  args: {
+    title: "Test Title",
+    widthLimit: false,
+  },
 };
 
-export const IconColorOverlay = Template.bind({});
+export const IconColorOverlay = {
+  render: Template,
 
-IconColorOverlay.args = {
-  title: "Test Title",
-  titleIcon: <TestIcon />,
-  iconColor: "accept",
+  args: {
+    title: "Test Title",
+    titleIcon: <TestIcon />,
+    iconColor: "accept",
+  },
 };
 
-export const NoOverlayBG = Template.bind({});
+export const NoOverlayBG = {
+  render: Template,
 
-NoOverlayBG.args = {
-  title: "Test Title",
-  titleIcon: <TestIcon />,
-  iconColor: "delete",
-  backgroundOverlay: false,
+  args: {
+    title: "Test Title",
+    titleIcon: <TestIcon />,
+    iconColor: "delete",
+    backgroundOverlay: false,
+  },
 };
 
-export const CustomMaxWidth = Template.bind({});
+export const CustomMaxWidth = {
+  render: Template,
 
-CustomMaxWidth.args = {
-  title: "Test Title",
-  titleIcon: <TestIcon />,
-  customMaxWidth: 250,
+  args: {
+    title: "Test Title",
+    titleIcon: <TestIcon />,
+    customMaxWidth: 250,
+  },
 };
 
-export const CustomStyles = Template.bind({});
+export const CustomStyles = {
+  render: Template,
 
-CustomStyles.args = {
-  title: "Test Title",
-  titleIcon: <TestIcon />,
-  sx: {
-    "& .dialogContent": {
-      backgroundColor: "red",
+  args: {
+    title: "Test Title",
+    titleIcon: <TestIcon />,
+    sx: {
+      "& .dialogContent": {
+        backgroundColor: "red",
+      },
     },
   },
 };
