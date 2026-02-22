@@ -22,7 +22,7 @@ import Grid from "../Grid/Grid";
 import { LoginWrapperProps } from "./LoginWrapper.types";
 import { breakPoints } from "../../global/utils";
 
-const poster = require("../assets/background/background.jpg");
+import poster from "../assets/background/background.jpg";
 
 const CustomLogin = styled.div(({ theme }) => {
   return {

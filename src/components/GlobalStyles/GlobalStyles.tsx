@@ -19,24 +19,24 @@ import { createGlobalStyle } from "styled-components";
 import get from "lodash/get";
 import { darkColors, lightColors } from "../../global/themes";
 
-const InterBlackWoff = require("../assets/fonts/Inter/Inter-Black.woff");
-const InterBlackItalicWoff = require("../assets/fonts/Inter/Inter-BlackItalic.woff");
-const InterBoldWoff = require("../assets/fonts/Inter/Inter-Bold.woff");
-const InterBoldItalicWoff = require("../assets/fonts/Inter/Inter-BoldItalic.woff");
-const InterItalicWoff = require("../assets/fonts/Inter/Inter-Italic.woff");
-const InterLightWoff = require("../assets/fonts/Inter/Inter-Light.woff");
-const InterLightItalicWoff = require("../assets/fonts/Inter/Inter-LightItalic.woff");
-const InterRegularWoff = require("../assets/fonts/Inter/Inter-Regular.woff");
-const InterThinWoff = require("../assets/fonts/Inter/Inter-Thin.woff");
-const InterBlackWoff2 = require("../assets/fonts/Inter/Inter-Black.woff2");
-const InterBlackItalicWoff2 = require("../assets/fonts/Inter/Inter-BlackItalic.woff2");
-const InterBoldWoff2 = require("../assets/fonts/Inter/Inter-Bold.woff2");
-const InterBoldItalicWoff2 = require("../assets/fonts/Inter/Inter-BoldItalic.woff2");
-const InterItalicWoff2 = require("../assets/fonts/Inter/Inter-Italic.woff2");
-const InterLightWoff2 = require("../assets/fonts/Inter/Inter-Light.woff2");
-const InterLightItalicWoff2 = require("../assets/fonts/Inter/Inter-LightItalic.woff2");
-const InterRegularWoff2 = require("../assets/fonts/Inter/Inter-Regular.woff2");
-const InterThinWoff2 = require("../assets/fonts/Inter/Inter-Thin.woff2");
+import InterBlackWoff from "../assets/fonts/Inter/Inter-Black.woff";
+import InterBlackItalicWoff from "../assets/fonts/Inter/Inter-BlackItalic.woff";
+import InterBoldWoff from "../assets/fonts/Inter/Inter-Bold.woff";
+import InterBoldItalicWoff from "../assets/fonts/Inter/Inter-BoldItalic.woff";
+import InterItalicWoff from "../assets/fonts/Inter/Inter-Italic.woff";
+import InterLightWoff from "../assets/fonts/Inter/Inter-Light.woff";
+import InterLightItalicWoff from "../assets/fonts/Inter/Inter-LightItalic.woff";
+import InterRegularWoff from "../assets/fonts/Inter/Inter-Regular.woff";
+import InterThinWoff from "../assets/fonts/Inter/Inter-Thin.woff";
+import InterBlackWoff2 from "../assets/fonts/Inter/Inter-Black.woff2";
+import InterBlackItalicWoff2 from "../assets/fonts/Inter/Inter-BlackItalic.woff2";
+import InterBoldWoff2 from "../assets/fonts/Inter/Inter-Bold.woff2";
+import InterBoldItalicWoff2 from "../assets/fonts/Inter/Inter-BoldItalic.woff2";
+import InterItalicWoff2 from "../assets/fonts/Inter/Inter-Italic.woff2";
+import InterLightWoff2 from "../assets/fonts/Inter/Inter-Light.woff2";
+import InterLightItalicWoff2 from "../assets/fonts/Inter/Inter-LightItalic.woff2";
+import InterRegularWoff2 from "../assets/fonts/Inter/Inter-Regular.woff2";
+import InterThinWoff2 from "../assets/fonts/Inter/Inter-Thin.woff2";
 
 const GlobalStyles = createGlobalStyle`
     ${({ theme }) => {

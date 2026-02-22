@@ -30,6 +30,7 @@
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.3.0",
+    "@rollup/plugin-url": "^8.0.2",
     "@storybook-community/storybook-dark-mode": "^7.1.0",
     "@storybook/addon-docs": "10.2.10",
     "@storybook/addon-links": "10.2.10",
