@@ -55,7 +55,7 @@
     "remark-gfm": "^4.0.1",
     "rollup": "^4.59.0",
     "rollup-plugin-copy": "^3.5.0",
-    "rollup-plugin-dts": "^6.3.0",
+    "rollup-plugin-dts": "^6.4.0",
     "rollup-plugin-import-css": "^4.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "storybook": "10.2.19",
