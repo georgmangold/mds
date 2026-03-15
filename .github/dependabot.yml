@@ -25,7 +25,15 @@ updates:
           - "major"
           - "minor"
           - "patch"
-        
+      storybook:
+        applies-to: version-updates
+        patterns:
+          - "storybook"
+          - "@storybook/*"
+        update-types:
+          - "major"
+          - "minor"
+          - "patch"        
 
   # GitHub Actions
   - package-ecosystem: "github-actions"
