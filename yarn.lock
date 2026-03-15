@@ -2558,9 +2558,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook-community/storybook-dark-mode@npm:^7.1.0":
-  version: 7.1.0
-  resolution: "@storybook-community/storybook-dark-mode@npm:7.1.0"
+"@storybook-community/storybook-dark-mode@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "@storybook-community/storybook-dark-mode@npm:7.1.1"
   dependencies:
     "@storybook/icons": "npm:^2.0.1"
     dequal: "npm:^2.0.3"
@@ -2570,7 +2570,7 @@ __metadata:
   peerDependenciesMeta:
     "@storybook/addon-docs":
       optional: true
-  checksum: 10c0/77fc0eb92ef30d44695666efc1253c3dbae85734365bc2dd43dffdae4432abbf1fa23b33597ea95d2be23f1934f27f0f6ad96dd22d4017675a0adcb93efe4d0d
+  checksum: 10c0/1c185376129839b1b92cd73e5450889040edd9daa68a9b0cd3366f08a9ac31a23052f24f4aeba6c10b6d18f026a30ef805cde1b06638d43b1152c96829bd9864
   languageName: node
   linkType: hard
 
@@ -7027,7 +7027,7 @@ __metadata:
     "@rollup/plugin-terser": "npm:^0.4.4"
     "@rollup/plugin-typescript": "npm:^12.3.0"
     "@rollup/plugin-url": "npm:^8.0.2"
-    "@storybook-community/storybook-dark-mode": "npm:^7.1.0"
+    "@storybook-community/storybook-dark-mode": "npm:^7.1.1"
     "@storybook/addon-docs": "npm:10.2.19"
     "@storybook/addon-links": "npm:10.2.19"
     "@storybook/addon-webpack5-compiler-babel": "npm:4.0.0"
