@@ -1,6 +1,6 @@
 {
   "name": "mds",
-  "version": "1.1.5.6",
+  "version": "1.1.5.8",
   "description": "A Modular Components Library",
   "homepage": ".",
   "license": "AGPL-3.0-or-later",
@@ -62,5 +62,5 @@
     "tslib": "^2.8.1",
     "typescript": "^5.8.3"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.13.0"
 }
