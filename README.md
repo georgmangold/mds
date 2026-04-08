@@ -1,8 +1,8 @@
 # Modular Design System
 
-Modular Design System or short `mds` is a Fork of MinIO Design System it´s a design specification for all UI elements used in MinIO® products.
+Modular Design System or short `mds` is a fork of MinIO® Design System it´s a design specification for UI elements used in MinIO® products.
 
-> [!NOTE]
+> [!IMPORTANT]
 > MINIO is a registered trademark of the MinIO Corporation. Consequently, this project is not affiliated with or endorsed by the MinIO Corporation.
 
 ## How to test
