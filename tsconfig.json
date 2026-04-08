@@ -7,7 +7,6 @@
     "noEmitOnError": true,
     "lib": ["es2024"],
     "strict": true,
-    "esModuleInterop": false,
     "outDir": "dist/esm",
     "declarationDir": "dist/esm",
     "rootDir": "./",
