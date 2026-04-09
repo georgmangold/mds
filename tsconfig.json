@@ -5,7 +5,7 @@
     "jsx": "react-jsx",
     "moduleResolution": "bundler",
     "noEmitOnError": true,
-    "lib": ["es2024"],
+    "lib": ["es2024","dom"],
     "strict": true,
     "outDir": "dist/esm",
     "declarationDir": "dist/esm",
