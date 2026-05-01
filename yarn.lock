@@ -6718,7 +6718,7 @@ __metadata:
     remark-gfm: "npm:^4.0.1"
     rollup: "npm:^4.60.1"
     rollup-plugin-dts: "npm:^6.4.1"
-    rollup-plugin-import-css: "npm:^4.2.0"
+    rollup-plugin-import-css: "npm:^4.2.1"
     rollup-plugin-peer-deps-external: "npm:^2.2.4"
     storybook: "npm:10.3.5"
     styled-components: "npm:5.3.11"
@@ -8228,14 +8228,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-import-css@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "rollup-plugin-import-css@npm:4.2.0"
+"rollup-plugin-import-css@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "rollup-plugin-import-css@npm:4.2.1"
   dependencies:
     "@rollup/pluginutils": "npm:^5.3.0"
   peerDependencies:
     rollup: ^2.x.x || ^3.x.x || ^4.x.x
-  checksum: 10c0/1429e2e86ba498e32ba5c362e9b2cdb5fda86cd16d37771a4e516851da08b9ede564b0199d3b816fa8453a181b0c6b44e886703854c8f0f16a6961485fd118e9
+  checksum: 10c0/4a6c7cabc0cdec907670f102a4333fa7ec73e80247744ada7ba69ef8e012e20ed67b29e7bddfdfb3f418b5bd838a3cb2039b4ea5eda7db7022bfc46fbabf70ea
   languageName: node
   linkType: hard
 
